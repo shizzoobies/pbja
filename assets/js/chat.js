@@ -8,7 +8,7 @@
   'use strict';
 
   /* ── Replace with your deployed Cloudflare Worker URL ────── */
-  var CHAT_API = 'YOUR_CLOUDFLARE_WORKER_URL';
+  var CHAT_API = 'https://pbj-chat.tgqhg6kf4g.workers.dev';
 
   /* ── Resolve asset path (works from root and /blog/ pages) ── */
   var scriptSrc = (document.currentScript || {}).src || '';
