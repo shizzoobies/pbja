@@ -10,6 +10,12 @@
   /* ── Replace with your deployed Cloudflare Worker URL ────── */
   var CHAT_API = 'YOUR_CLOUDFLARE_WORKER_URL';
 
+  /* ── Resolve asset path (works from root and /blog/ pages) ── */
+  var scriptSrc = (document.currentScript || {}).src || '';
+  var BASE = scriptSrc.replace(/assets\/js\/chat\.js.*$/, '') ||
+             (window.location.pathname.includes('/blog/') ? '../' : '');
+  var AVATAR = BASE + 'assets/img/brittany-headshot.png';
+
   /* ── Widget HTML ─────────────────────────────────────────── */
   var WIDGET_HTML = [
     '<div id="pbjChat" class="chat-widget" role="complementary" aria-label="Chat assistant">',
@@ -18,10 +24,7 @@
 
         '<div class="chat-header">',
           '<div class="chat-header-avatar" aria-hidden="true">',
-            '<svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38">',
-              '<circle cx="19" cy="15" r="6" fill="rgba(255,255,255,.85)"/>',
-              '<path d="M7 36c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(255,255,255,.85)" stroke-width="2.2" stroke-linecap="round"/>',
-            '</svg>',
+            '<img id="chatAvatar" src="" alt="" class="chat-avatar-img">',
           '</div>',
           '<div class="chat-header-info">',
             '<p class="chat-name">PBJ Assistant</p>',
@@ -67,6 +70,10 @@
     var wrap = document.createElement('div');
     wrap.innerHTML = WIDGET_HTML;
     document.body.appendChild(wrap.firstChild);
+
+    /* Set avatar src now that the element is in the DOM */
+    var avatarEl = document.getElementById('chatAvatar');
+    if (avatarEl) avatarEl.src = AVATAR;
 
     var panel     = document.getElementById('chatPanel');
     var toggle    = document.getElementById('chatToggle');

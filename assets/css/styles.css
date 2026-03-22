@@ -893,14 +893,19 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   flex-shrink: 0;
 }
 .chat-header-avatar {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: rgba(255,255,255,.14);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,.25);
+}
+.chat-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 .chat-header-info { flex: 1; min-width: 0; }
 .chat-name { font-size: .88rem; font-weight: 700; margin: 0; line-height: 1.2; }
