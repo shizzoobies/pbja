@@ -938,10 +938,27 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .blog-card h2 a:hover { color: var(--accent); }
 
+.author-row {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  margin-bottom: .75rem;
+}
+
+.author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--pink-light);
+  flex-shrink: 0;
+}
+
 .post-meta {
   font-size: .83rem;
   color: var(--text-muted);
-  margin-bottom: .75rem;
+  margin: 0;
 }
 
 .blog-card p.excerpt {
@@ -1777,48 +1794,18 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 /* Lock scroll while splash is up */
 body.splash-active { overflow: hidden; }
 
-/* Pink radial glow behind logo */
-.splash-glow {
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(196,117,140,.22) 0%, transparent 68%);
-  animation: splash-pulse 2s ease-in-out infinite;
-  pointer-events: none;
-}
-
-/* Concentric pink rings */
-.splash-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(196,117,140,.28);
-  animation: splash-ring-pulse 2s ease-in-out infinite;
-  pointer-events: none;
-}
-.splash-ring--lg {
-  width: 420px;
-  height: 420px;
-  animation-delay: .2s;
-  border-color: rgba(196,117,140,.14);
-}
-.splash-ring--md {
-  width: 310px;
-  height: 310px;
-  animation-delay: .0s;
-}
-
-/* Logo — white, large, pulsing */
+/* Logo — white, growing, subtle pink drop-shadow */
 .splash-logo {
   position: relative;
   z-index: 1;
   height: 200px;
   width: auto;
-  filter: brightness(0) invert(1);
-  animation: splash-pulse 2s ease-in-out infinite;
+  filter: brightness(0) invert(1) drop-shadow(0 0 32px rgba(196,117,140,.32));
+  animation: splash-grow 3.3s ease-in forwards;
+  transform-origin: center center;
 }
 
-/* Pink tagline below logo */
+/* Tagline — fades in gently, no oscillation */
 .splash-tagline {
   position: relative;
   z-index: 1;
@@ -1827,20 +1814,20 @@ body.splash-active { overflow: hidden; }
   font-weight: 700;
   letter-spacing: .22em;
   text-transform: uppercase;
-  opacity: .75;
+  opacity: 0;
   margin: 0;
-  animation: splash-pulse 2s ease-in-out infinite;
-  animation-delay: .1s;
+  animation: splash-tagline-in 0.8s ease-out 0.5s forwards;
 }
 
-@keyframes splash-pulse {
-  0%, 100% { transform: scale(1);    opacity: 1; }
-  50%       { transform: scale(1.04); opacity: .82; }
+/* Logo grows continuously — exit fires mid-growth for "jumps to page" feel */
+@keyframes splash-grow {
+  from { transform: scale(0.72); }
+  to   { transform: scale(1.9); }
 }
 
-@keyframes splash-ring-pulse {
-  0%, 100% { transform: scale(1);    opacity: 1; }
-  50%       { transform: scale(1.07); opacity: .45; }
+@keyframes splash-tagline-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: .7; transform: translateY(0); }
 }
 
 @keyframes splash-exit {
@@ -1848,7 +1835,7 @@ body.splash-active { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #splash, .splash-logo, .splash-glow, .splash-ring, .splash-tagline {
+  #splash, .splash-logo, .splash-tagline {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
   }
