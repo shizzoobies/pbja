@@ -782,7 +782,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .why-choose-card {
@@ -791,6 +791,24 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   border-radius: var(--radius-lg);
   padding: 2rem 2rem 1.75rem;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.why-choose-card-promise {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.why-choose-card-promise svg {
+  width: 16px; height: 16px;
+  flex-shrink: 0;
 }
 
 .why-choose-card-icon {
