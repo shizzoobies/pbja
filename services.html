@@ -68,69 +68,98 @@
       </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="section" aria-labelledby="all-services-heading">
+    <!-- Orbit Services -->
+    <section class="section orbit-section" aria-labelledby="orbit-heading">
       <div class="container">
-        <h2 id="all-services-heading" class="visually-hidden">All Services</h2>
-        <div class="services-grid">
+        <div class="section-header section-header--center" style="margin-bottom:3rem;">
+          <hr class="section-rule" aria-hidden="true">
+          <span class="eyebrow">What We Offer</span>
+          <h2 id="orbit-heading">Seven Services, One Expert Team</h2>
+          <p class="lead">Hover any service to explore what we can do for your business.</p>
+        </div>
 
-          <article class="service-card" aria-labelledby="svc-bookkeeping">
-            <div class="service-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg>
+        <!-- Desktop orbit -->
+        <div class="orbit-layout" aria-hidden="true">
+
+          <div class="orbit-scene" id="orbitScene">
+            <div class="orbit-ring orbit-ring--outer"></div>
+            <div class="orbit-ring orbit-ring--mid"></div>
+            <div class="orbit-center">
+              <img src="assets/img/brittany-headshot.png" alt="">
             </div>
-            <h2 id="svc-bookkeeping">Bookkeeping</h2>
+
+            <button class="orbit-node is-active" data-key="bookkeeping" tabindex="-1">
+              <div class="orbit-node-inner"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg></div>
+            </button>
+            <button class="orbit-node" data-key="cfo" tabindex="-1">
+              <div class="orbit-node-inner"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg></div>
+            </button>
+            <button class="orbit-node" data-key="quickbooks" tabindex="-1">
+              <div class="orbit-node-inner"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></div>
+            </button>
+            <button class="orbit-node" data-key="cashflow" tabindex="-1">
+              <div class="orbit-node-inner"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg></div>
+            </button>
+            <button class="orbit-node" data-key="budgeting" tabindex="-1">
+              <div class="orbit-node-inner"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg></div>
+            </button>
+            <button class="orbit-node" data-key="reporting" tabindex="-1">
+              <div class="orbit-node-inner"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125z"/></svg></div>
+            </button>
+            <button class="orbit-node" data-key="planning" tabindex="-1">
+              <div class="orbit-node-inner"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/></svg></div>
+            </button>
+          </div>
+
+          <!-- Detail panel -->
+          <div class="orbit-detail" role="region" aria-live="polite" aria-label="Service details">
+            <span class="orbit-detail-tag">Currently Viewing</span>
+            <h3 class="orbit-detail-title" id="orbitTitle">Bookkeeping</h3>
+            <p class="orbit-detail-desc" id="orbitDesc">Accurate, tax-ready bookkeeping that keeps your finances organized and stress-free. We handle reconciliations, reporting, and day-to-day details so you can focus on running your business.</p>
+            <div class="orbit-detail-dots" id="orbitDots" aria-hidden="true"></div>
+            <a class="btn" href="contact.html">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Mobile / accessible fallback -->
+        <div class="orbit-mobile services-grid" aria-label="All services">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg></div>
+            <h3>Bookkeeping</h3>
             <p>Accurate, tax-ready bookkeeping that keeps your finances organized and stress-free. We handle reconciliations, reporting, and day-to-day details so you can focus on running your business.</p>
           </article>
-
-          <article class="service-card" aria-labelledby="svc-cfo">
-            <div class="service-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
-            </div>
-            <h2 id="svc-cfo">Fractional CFO Services</h2>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg></div>
+            <h3>Fractional CFO Services</h3>
             <p>Get high-level financial expertise without the full-time cost. From cash flow and budgeting to growth planning, we provide the insights you need to make confident business decisions.</p>
           </article>
-
-          <article class="service-card" aria-labelledby="svc-qb">
-            <div class="service-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></svg>
-            </div>
-            <h2 id="svc-qb">QuickBooks Clean-Up</h2>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></div>
+            <h3>QuickBooks Clean-Up</h3>
             <p>Messy books? We specialize in bookkeeping clean-up, organizing past records, fixing errors, and getting your finances back on track so you can move forward with clarity and confidence.</p>
           </article>
-
-          <article class="service-card" aria-labelledby="svc-cashflow">
-            <div class="service-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
-            </div>
-            <h2 id="svc-cashflow">Cash Flow Management</h2>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg></div>
+            <h3>Cash Flow Management</h3>
             <p>We help you understand, track, and improve your cash flow so your business has the liquidity it needs to cover expenses, plan ahead, and grow with confidence.</p>
           </article>
-
-          <article class="service-card" aria-labelledby="svc-budget">
-            <div class="service-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
-            </div>
-            <h2 id="svc-budget">Budgeting &amp; Forecasting</h2>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg></div>
+            <h3>Budgeting &amp; Forecasting</h3>
             <p>Turn numbers into a roadmap for success. We help you build realistic budgets and forecasts that improve cash flow management, guide smarter decisions, and keep your business prepared for growth.</p>
           </article>
-
-          <article class="service-card" aria-labelledby="svc-reporting">
-            <div class="service-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125z"/></svg>
-            </div>
-            <h2 id="svc-reporting">Financial Reporting</h2>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125z"/></svg></div>
+            <h3>Financial Reporting</h3>
             <p>Accurate, easy-to-understand financial reports that give you a clear picture of your business performance and help you make informed decisions with confidence.</p>
           </article>
-
-          <article class="service-card" aria-labelledby="svc-planning">
-            <div class="service-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/></svg>
-            </div>
-            <h2 id="svc-planning">Financial Planning</h2>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/></svg></div>
+            <h3>Financial Planning</h3>
             <p>Tailored financial planning to help you manage cash flow, reduce risk, and align your money with your long-term business goals - so every dollar is working as hard as you are.</p>
           </article>
-
         </div>
+
       </div>
     </section>
 
@@ -215,5 +244,124 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+  (function () {
+    var scene = document.getElementById('orbitScene');
+    if (!scene) return;
+
+    var SERVICES = {
+      bookkeeping: {
+        title: 'Bookkeeping',
+        desc: 'Accurate, tax-ready bookkeeping that keeps your finances organized and stress-free. We handle reconciliations, reporting, and day-to-day details so you can focus on running your business.'
+      },
+      cfo: {
+        title: 'Fractional CFO Services',
+        desc: 'Get high-level financial expertise without the full-time cost. From cash flow and budgeting to growth planning, we provide the insights you need to make confident business decisions.'
+      },
+      quickbooks: {
+        title: 'QuickBooks Clean-Up',
+        desc: 'Messy books? We specialize in bookkeeping clean-up, organizing past records, fixing errors, and getting your finances back on track so you can move forward with clarity and confidence.'
+      },
+      cashflow: {
+        title: 'Cash Flow Management',
+        desc: 'We help you understand, track, and improve your cash flow so your business has the liquidity it needs to cover expenses, plan ahead, and grow with confidence.'
+      },
+      budgeting: {
+        title: 'Budgeting & Forecasting',
+        desc: 'Turn numbers into a roadmap for success. We build realistic budgets and forecasts that improve cash flow management, guide smarter decisions, and keep your business prepared for growth.'
+      },
+      reporting: {
+        title: 'Financial Reporting',
+        desc: 'Accurate, easy-to-understand financial reports that give you a clear picture of your business performance and help you make informed decisions with confidence.'
+      },
+      planning: {
+        title: 'Financial Planning',
+        desc: 'Tailored financial planning to help you manage cash flow, reduce risk, and align your money with your long-term business goals - so every dollar is working as hard as you are.'
+      }
+    };
+
+    var keys     = Object.keys(SERVICES);
+    var nodes    = Array.prototype.slice.call(scene.querySelectorAll('.orbit-node'));
+    var titleEl  = document.getElementById('orbitTitle');
+    var descEl   = document.getElementById('orbitDesc');
+    var dotsWrap = document.getElementById('orbitDots');
+    var detail   = document.querySelector('.orbit-detail');
+
+    var RADIUS   = 200;
+    var NODE_SZ  = 58;
+    var rotation = 0;
+    var paused   = false;
+    var lastTs   = null;
+    var RPM      = 0.35;
+
+    /* Build dot indicators */
+    keys.forEach(function (key, i) {
+      var dot = document.createElement('button');
+      dot.className = 'orbit-dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', SERVICES[key].title);
+      dot.dataset.key = key;
+      dot.addEventListener('click', function () { setActive(key); });
+      dotsWrap.appendChild(dot);
+    });
+
+    function setActive(key) {
+      /* Fade out */
+      detail.classList.add('orbit-detail--switching');
+      setTimeout(function () {
+        var svc = SERVICES[key];
+        if (svc) {
+          titleEl.textContent = svc.title;
+          descEl.textContent  = svc.desc;
+        }
+        detail.classList.remove('orbit-detail--switching');
+      }, 180);
+
+      nodes.forEach(function (n) {
+        n.classList.toggle('is-active', n.dataset.key === key);
+      });
+      Array.prototype.forEach.call(dotsWrap.querySelectorAll('.orbit-dot'), function (d) {
+        d.classList.toggle('is-active', d.dataset.key === key);
+      });
+    }
+
+    function positionNodes(rot) {
+      var n = nodes.length;
+      nodes.forEach(function (node, i) {
+        var angle = (i / n) * 2 * Math.PI - Math.PI / 2 + rot;
+        var x = Math.cos(angle) * RADIUS;
+        var y = Math.sin(angle) * RADIUS;
+        node.style.transform =
+          'translate(calc(' + x + 'px - ' + (NODE_SZ / 2) + 'px), calc(' + y + 'px - ' + (NODE_SZ / 2) + 'px))';
+      });
+    }
+
+    function tick(ts) {
+      if (lastTs !== null && !paused) {
+        rotation += ((RPM / 60) * ((ts - lastTs) / 1000)) * 2 * Math.PI;
+      }
+      lastTs = ts;
+      positionNodes(rotation);
+      requestAnimationFrame(tick);
+    }
+
+    nodes.forEach(function (node) {
+      node.addEventListener('mouseenter', function () {
+        paused = true;
+        setActive(node.dataset.key);
+      });
+      node.addEventListener('mouseleave', function () { paused = false; });
+      node.addEventListener('click',      function () { setActive(node.dataset.key); });
+    });
+
+    /* Respect reduced-motion */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      paused = true;
+    }
+
+    positionNodes(0);
+    requestAnimationFrame(tick);
+    setActive(keys[0]);
+  })();
+  </script>
 </body>
 </html>

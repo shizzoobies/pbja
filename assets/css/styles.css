@@ -1840,3 +1840,176 @@ body.splash-active { overflow: hidden; }
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ============================================================
+   ── 29. ORBIT SERVICES ─────────────────────────────────────
+   ============================================================ */
+
+.orbit-section { background: var(--bg); }
+
+.orbit-layout {
+  display: grid;
+  grid-template-columns: 540px 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Scene */
+.orbit-scene {
+  position: relative;
+  width: 520px;
+  height: 520px;
+  flex-shrink: 0;
+}
+
+/* Decorative rings */
+.orbit-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orbit-ring--outer {
+  width: 480px; height: 480px;
+  border: 1px dashed rgba(196,117,140,.2);
+  animation: orbit-ring-cw 80s linear infinite;
+}
+.orbit-ring--mid {
+  width: 360px; height: 360px;
+  border: 1px solid var(--border-light);
+  animation: orbit-ring-ccw 55s linear infinite;
+}
+
+@keyframes orbit-ring-cw  { to { transform: translate(-50%,-50%) rotate(360deg);  } }
+@keyframes orbit-ring-ccw { to { transform: translate(-50%,-50%) rotate(-360deg); } }
+
+/* Center portrait */
+.orbit-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 164px; height: 164px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--surface);
+  box-shadow:
+    0 0 0 8px rgba(196,117,140,.12),
+    0 0 0 16px rgba(196,117,140,.06),
+    var(--shadow-lg);
+  z-index: 2;
+}
+.orbit-center img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Orbit nodes */
+.orbit-node {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 58px; height: 58px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 3;
+}
+.orbit-node-inner {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .22s, border-color .22s, box-shadow .22s, transform .22s;
+  box-shadow: var(--shadow-sm);
+  color: var(--text-muted);
+}
+.orbit-node-inner svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+.orbit-node.is-active .orbit-node-inner,
+.orbit-node:hover    .orbit-node-inner,
+.orbit-node:focus-visible .orbit-node-inner {
+  background: var(--pink-light);
+  border-color: var(--pink);
+  color: var(--pink);
+  box-shadow: 0 0 0 5px rgba(196,117,140,.14), var(--shadow);
+  transform: scale(1.18);
+}
+.orbit-node:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 50%; }
+
+/* Detail panel */
+.orbit-detail { min-height: 220px; }
+
+.orbit-detail-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--pink);
+  background: var(--pink-light);
+  padding: .3rem .8rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.1rem;
+}
+
+.orbit-detail-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0 0 .8rem;
+}
+
+.orbit-detail-desc {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin: 0 0 1.75rem;
+  font-size: .95rem;
+}
+
+.orbit-detail-dots {
+  display: flex;
+  gap: .4rem;
+  margin-bottom: 1.5rem;
+}
+.orbit-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.orbit-dot.is-active { background: var(--pink); transform: scale(1.3); }
+
+/* Fade transition */
+.orbit-detail-title,
+.orbit-detail-desc {
+  transition: opacity .18s ease;
+}
+.orbit-detail--switching .orbit-detail-title,
+.orbit-detail--switching .orbit-detail-desc { opacity: 0; }
+
+/* Mobile: hide orbit, show grid */
+.orbit-mobile { display: none; }
+
+@media (max-width: 880px) {
+  .orbit-layout { display: none; }
+  .orbit-mobile  { display: grid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-ring--outer,
+  .orbit-ring--mid { animation: none; }
+}
