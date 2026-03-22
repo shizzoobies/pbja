@@ -2849,7 +2849,7 @@ body.splash-active { overflow: hidden; }
 /* Sidebar category nav — minimal left-rail style */
 .faq-cat-nav {
   position: sticky;
-  top: 6rem;
+  top: 13rem;
 }
 
 .faq-cat-label {
