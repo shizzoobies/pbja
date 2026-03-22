@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pbjsa-premium",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "3200", "."],
+      "port": 3200
+    }
+  ]
+}

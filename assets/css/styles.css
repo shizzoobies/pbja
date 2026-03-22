@@ -714,7 +714,8 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   line-height: 1.5;
 }
 .price-card .btn,
-.price-card .btn-secondary {
+.price-card .btn-secondary,
+.price-card .btn-gold {
   width: 100%;
   justify-content: center;
 }
@@ -1234,4 +1235,285 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
     transition-duration: .01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============================================================
+   ── 25. PREMIUM / CINEMATIC OVERRIDES ─────────────────────
+   ============================================================ */
+
+/* ── Split Hero (full-bleed, dark + image) ───────────────── */
+.hero-split {
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  min-height: calc(100svh - 62px);
+}
+
+.hero-panel-dark {
+  background: #12100D;
+  display: flex;
+  align-items: center;
+  padding: 5rem 4.5rem;
+}
+
+.hero-panel-content {
+  max-width: 540px;
+}
+
+.hero-panel-image {
+  position: relative;
+  overflow: hidden;
+  background: #0E0B08;
+}
+
+/* ── Cinematic image fill (absolute inside relative parent) ─ */
+.img-ph--fill {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  min-height: unset;
+  border-radius: 0;
+  background:
+    linear-gradient(to bottom, transparent 45%, rgba(10,7,4,.7) 100%),
+    linear-gradient(155deg, #3D2515 0%, #1F130A 45%, #0D0806 100%);
+}
+
+.img-ph--fill::after {
+  content: '';
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(255,255,255,.055);
+  pointer-events: none;
+}
+
+.img-ph--fill .img-ph-inner {
+  position: absolute;
+  bottom: 2rem;
+  left: 2.25rem;
+  right: 2.25rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0;
+  gap: 0;
+}
+
+.img-ph--fill .img-ph-inner svg {
+  width: 22px;
+  height: 22px;
+  color: rgba(255,255,255,.2);
+}
+
+.img-ph--fill .img-ph-inner span {
+  font-size: .65rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.28);
+  max-width: unset;
+  line-height: 1;
+}
+
+/* ── Cinematic standalone placeholders ───────────────────── */
+.img-ph--cinema {
+  background:
+    linear-gradient(to bottom, transparent 50%, rgba(10,7,4,.6) 100%),
+    linear-gradient(155deg, #3D2515 0%, #1F130A 45%, #0D0806 100%);
+  position: relative;
+}
+
+.img-ph--cinema::after {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: calc(var(--radius) - 6px);
+  pointer-events: none;
+}
+
+.img-ph--cinema .img-ph-inner {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.75rem;
+  right: 1.75rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0;
+  gap: 0;
+}
+
+.img-ph--cinema .img-ph-inner svg {
+  color: rgba(255,255,255,.18);
+  width: 22px;
+  height: 22px;
+}
+
+.img-ph--cinema .img-ph-inner span {
+  font-size: .62rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.28);
+  max-width: unset;
+  border: 1px solid rgba(255,255,255,.1);
+  padding: .28rem .6rem;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+/* ── Portrait with editorial bg blob ─────────────────────── */
+.portrait-editorial {
+  position: relative;
+}
+
+.portrait-editorial::before {
+  content: '';
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  background: var(--surface-3);
+  top: 8%;
+  left: -8%;
+  z-index: 0;
+}
+
+.portrait-editorial .img-ph {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Text on dark backgrounds ────────────────────────────── */
+.on-dark           { color: #F8F5F0; }
+.eyebrow--light    { color: var(--accent-light); }
+.lead--light       { color: rgba(248,245,240,.68); }
+
+/* Eyebrow with inline leading rule */
+.eyebrow--rule {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+}
+.eyebrow--rule::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Buttons for dark backgrounds ────────────────────────── */
+.btn--inverse {
+  background: #fff;
+  color: var(--accent-dark);
+  box-shadow: 0 4px 20px rgba(0,0,0,.35);
+}
+.btn--inverse:hover {
+  background: #F0E8DE;
+  color: var(--accent-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: rgba(248,245,240,.88);
+  border: 2px solid rgba(248,245,240,.22);
+}
+.btn-ghost:hover {
+  background: rgba(248,245,240,.08);
+  color: #fff;
+  border-color: rgba(248,245,240,.5);
+}
+
+/* ── Hero inline stats ───────────────────────────────────── */
+.hero-stats {
+  display: flex;
+  gap: 2.25rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+  flex-wrap: wrap;
+}
+
+.hero-stat-val {
+  display: block;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--accent-light);
+  line-height: 1;
+  margin-bottom: .2rem;
+  letter-spacing: -.02em;
+}
+
+.hero-stat-lbl {
+  font-size: .68rem;
+  font-weight: 600;
+  color: rgba(248,245,240,.42);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+/* ── Dark section ────────────────────────────────────────── */
+.section--dark {
+  background: #12100D;
+  color: #F8F5F0;
+}
+.section--dark h2,
+.section--dark h3 { color: #F8F5F0; }
+.section--dark .eyebrow { color: var(--accent-light); }
+.section--dark .lead    { color: rgba(248,245,240,.62); }
+
+.section--dark .quote-card {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.08);
+}
+.section--dark .quote-card blockquote { color: rgba(248,245,240,.82); }
+.section--dark .quote-card::before    { color: var(--accent-light); opacity: .25; }
+.section--dark .quote-author-name     { color: #F8F5F0; }
+.section--dark .quote-author-loc      { color: rgba(248,245,240,.45); }
+
+/* ── Service card hover accent ───────────────────────────── */
+.service-card {
+  border-left: 3px solid transparent;
+  transition: box-shadow .25s, transform .25s, border-color .25s;
+}
+.service-card:hover { border-left-color: var(--accent); }
+
+/* ── Outlined step numbers (services process) ────────────── */
+.step-num-outline {
+  display: block;
+  font-size: 3.25rem;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1;
+  margin-bottom: .5rem;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--accent);
+}
+
+/* ── Decorative section rule ─────────────────────────────── */
+.section-rule {
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  border: none;
+  margin: 0 0 1.5rem;
+}
+
+/* ── Responsive split hero ───────────────────────────────── */
+@media (max-width: 960px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-panel-dark {
+    padding: 3.5rem 1.75rem;
+  }
+  .hero-panel-image {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-panel-image { min-height: 280px; }
+  .hero-panel-dark  { padding: 2.75rem 1.25rem; }
+  .hero-stats       { gap: 1.5rem; }
 }
