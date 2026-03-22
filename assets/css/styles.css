@@ -20,6 +20,9 @@
   --accent-light:  #C4896A;
   --gold:          #B8882A;
   --gold-bg:       #FDF6E3;
+  --pink:          #C4758C;
+  --pink-mid:      #DBA8B5;
+  --pink-light:    #F9EDF1;
   --border:        #DDD3C7;
   --border-light:  #EDE6DD;
   --focus:         #1F6FEB;
@@ -1517,3 +1520,115 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   .hero-panel-dark  { padding: 2.75rem 1.25rem; }
   .hero-stats       { gap: 1.5rem; }
 }
+
+/* ── Pink accents ────────────────────────────────────────── */
+/* Quote marks */
+.quote-card::before { color: var(--pink-mid); opacity: .55; }
+
+/* Social hover */
+.social-link:hover { background: var(--pink); color: #fff; }
+
+/* Section rule pink variant */
+.section-rule--pink { background: var(--pink); }
+
+/* Pink-tinted section background */
+.section--pink-tint { background: var(--pink-light); }
+.section--pink-tint .eyebrow { color: var(--pink); }
+
+/* Eyebrow pink variant */
+.eyebrow--pink { color: var(--pink); }
+
+/* Price badge override — pink */
+.price-badge { background: var(--pink); }
+
+/* Featured card pink border */
+.price-card--featured {
+  border-color: var(--pink);
+}
+.price-card--featured ul li::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C4758C'%3E%3Cpath d='M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z'/%3E%3C/svg%3E");
+}
+.price-card--featured .price-amount { color: var(--pink); }
+
+/* ── Video Section ───────────────────────────────────────── */
+.video-section {
+  background: #0E0C09;
+  padding: var(--section-y) 0;
+}
+.video-section .section-header { margin-bottom: 2.5rem; }
+
+.video-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,.55);
+  background: #1A1410;
+}
+
+.video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder shown until real video is dropped in */
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background:
+    linear-gradient(to bottom, transparent 40%, rgba(10,7,4,.55) 100%),
+    linear-gradient(155deg, #2C1D14 0%, #1A100A 50%, #0E0806 100%);
+}
+.video-placeholder-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(196,117,140,.12);
+  border: 2px solid rgba(196,117,140,.35);
+  display: grid;
+  place-items: center;
+  color: var(--pink-mid);
+}
+.video-placeholder-icon svg { width: 34px; height: 34px; }
+.video-placeholder p {
+  font-size: .7rem;
+  color: rgba(255,255,255,.28);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Sound toggle button */
+.video-sound-btn {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: rgba(8,6,4,.65);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius-pill);
+  color: rgba(255,255,255,.88);
+  padding: .55rem 1.1rem;
+  font-size: .78rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  transition: background .2s, border-color .2s;
+  letter-spacing: .02em;
+}
+.video-sound-btn:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.35);
+}
+.video-sound-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
