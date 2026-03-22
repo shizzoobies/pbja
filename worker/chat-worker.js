@@ -15,8 +15,8 @@
 const ALLOWED_ORIGINS = [
   'https://pbjsa.com',
   'https://www.pbjsa.com',
-  /* add your Cloudflare Pages preview domain here if needed */
-  'http://localhost:3200', /* remove before going live */
+  'https://pbja.pages.dev',
+  'http://localhost:3200',
 ];
 
 const SYSTEM_PROMPT = `You are a friendly, concise navigation assistant for PBJ Strategic Accounting — a bookkeeping firm serving Clay County and surrounding areas in Florida, owned by Brittany Ferguson.
