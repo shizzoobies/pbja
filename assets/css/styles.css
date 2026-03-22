@@ -230,7 +230,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: .9rem 0;
+  padding: 1.6rem 0;
 }
 
 /* Brand */
@@ -280,12 +280,12 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 
 .nav-list a {
   display: block;
-  padding: .45rem .75rem;
+  padding: .5rem .85rem;
   border-radius: var(--radius-sm);
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 1rem;
   transition: color .2s, background .2s;
 }
 .nav-list a:hover {
@@ -478,20 +478,30 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 /* ── 11. Page Hero ────────────────────────────────────────── */
 .page-hero {
   padding: 3.5rem 0 2.5rem;
-  background: var(--surface-2);
-  border-bottom: 1px solid var(--border-light);
+  background: #12100D;
+  border-bottom: none;
 }
 
 .page-hero h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: .6rem;
+  color: #FAF8F4;
 }
 
 .page-hero p {
-  color: var(--text-muted);
+  color: rgba(250, 248, 244, .65);
   font-size: 1.08rem;
   max-width: 60ch;
   margin: 0;
+}
+
+.page-hero .eyebrow,
+.page-hero .kicker {
+  color: var(--accent-light);
+}
+
+.page-hero a {
+  color: var(--accent-light);
 }
 
 /* ── 12. Cards (shared) ───────────────────────────────────── */
@@ -2172,21 +2182,12 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   height: 130px;
   width: auto;
   display: block;
-  transform: scale(2);
-  transform-origin: left center;
-  position: relative;
-  z-index: 1;
 }
-
-/* Allow scaled logo to bleed outside the header without shifting nav */
-.site-header { overflow: visible; }
-.brand { overflow: visible; }
 
 .footer-brand .site-logo {
   filter: brightness(0) invert(1);
   opacity: .9;
   height: 130px;
-  transform: none;
 }
 
 /* Hero panel photo (Brittany headshot fills the right panel) */
