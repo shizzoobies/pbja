@@ -1222,7 +1222,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.68);
   margin-bottom: 1rem;
 }
 .footer-nav-list {
@@ -1264,7 +1264,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .footer-copy {
   font-size: .82rem;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.65);
 }
 .footer-legal {
   display: flex;
@@ -1272,7 +1272,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .footer-legal a {
   font-size: .82rem;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.65);
   text-decoration: none;
   transition: color .2s;
 }

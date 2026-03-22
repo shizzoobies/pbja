@@ -83,13 +83,38 @@
     var popover = trigger.querySelector('.maps-popover');
     if (!popover) return;
 
-    trigger.querySelector('address').addEventListener('click', function (e) {
-      e.stopPropagation();
-      // Close any other open popovers first
+    var addr = trigger.querySelector('address');
+
+    /* Make address keyboard-operable */
+    addr.setAttribute('tabindex', '0');
+    addr.setAttribute('role', 'button');
+    addr.setAttribute('aria-haspopup', 'dialog');
+    addr.setAttribute('aria-expanded', 'false');
+
+    function closeAll() {
       document.querySelectorAll('.maps-popover.is-open').forEach(function (p) {
-        if (p !== popover) p.classList.remove('is-open');
+        p.classList.remove('is-open');
       });
-      popover.classList.toggle('is-open');
+      document.querySelectorAll('.maps-trigger address').forEach(function (a) {
+        a.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    function toggle() {
+      var opening = !popover.classList.contains('is-open');
+      closeAll();
+      if (opening) {
+        popover.classList.add('is-open');
+        addr.setAttribute('aria-expanded', 'true');
+        /* Move focus to first link in popover */
+        var firstLink = popover.querySelector('a');
+        if (firstLink) firstLink.focus();
+      }
+    }
+
+    addr.addEventListener('click', function (e) { e.stopPropagation(); toggle(); });
+    addr.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); toggle(); }
     });
 
     popover.addEventListener('click', function (e) { e.stopPropagation(); });
@@ -99,12 +124,18 @@
     document.querySelectorAll('.maps-popover.is-open').forEach(function (p) {
       p.classList.remove('is-open');
     });
+    document.querySelectorAll('.maps-trigger address').forEach(function (a) {
+      a.setAttribute('aria-expanded', 'false');
+    });
   });
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       document.querySelectorAll('.maps-popover.is-open').forEach(function (p) {
         p.classList.remove('is-open');
+      });
+      document.querySelectorAll('.maps-trigger address').forEach(function (a) {
+        a.setAttribute('aria-expanded', 'false');
       });
     }
   });
