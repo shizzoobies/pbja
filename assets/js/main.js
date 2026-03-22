@@ -205,6 +205,152 @@
   });
 })();
 
+/* ── Contact Modal ────────────────────────────────────────── */
+(function () {
+  /* Don't intercept on the contact page itself */
+  var isContactPage = window.location.pathname.replace(/\\/g, '/').indexOf('contact.html') !== -1;
+
+  var MODAL_HTML = [
+    '<div id="cmodal" class="cmodal" role="dialog" aria-modal="true"',
+    '     aria-labelledby="cmodal-title" aria-hidden="true">',
+    '  <div class="cmodal-backdrop" id="cmodalBackdrop"></div>',
+    '  <div class="cmodal-panel">',
+    '    <button class="cmodal-close" id="cmodalClose" aria-label="Close form">',
+    '      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"',
+    '           stroke-width="2.5" stroke-linecap="round" aria-hidden="true">',
+    '        <path d="M18 6 6 18M6 6l12 12"/>',
+    '      </svg>',
+    '    </button>',
+    '    <span class="eyebrow">Get in Touch</span>',
+    '    <h2 id="cmodal-title" style="font-size:1.5rem;margin:.5rem 0 .4rem;">Send Us a Message</h2>',
+    '    <p style="color:var(--text-muted);font-size:.92rem;margin:0 0 1.5rem;">We typically respond within one business day.</p>',
+    '    <form id="cmodalForm" action="#" method="post" novalidate>',
+    '      <div class="form-grid">',
+    '        <div class="form-field">',
+    '          <label for="m-name">Full Name <abbr title="required" aria-label="required">*</abbr></label>',
+    '          <input id="m-name" name="name" type="text" autocomplete="name" required aria-required="true" placeholder="Jane Smith">',
+    '        </div>',
+    '        <div class="form-field">',
+    '          <label for="m-email">Email Address <abbr title="required" aria-label="required">*</abbr></label>',
+    '          <input id="m-email" name="email" type="email" autocomplete="email" required aria-required="true" placeholder="jane@example.com">',
+    '        </div>',
+    '        <div class="form-field">',
+    '          <label for="m-phone">Phone Number <abbr title="required" aria-label="required">*</abbr></label>',
+    '          <input id="m-phone" name="phone" type="tel" autocomplete="tel" required aria-required="true" placeholder="(904) 555-0100">',
+    '        </div>',
+    '        <div class="form-field">',
+    '          <label for="m-package">Package Preference</label>',
+    '          <select id="m-package" name="package">',
+    '            <option value="">Choose a package (optional)</option>',
+    '            <option value="uncrustable">The Uncrustable - from $400/mo</option>',
+    '            <option value="crust">Just the Crust - from $500/mo</option>',
+    '            <option value="classic">The Classic - from $1,000/mo</option>',
+    '            <option value="royale">The Jelly Royale - from $1,500/mo</option>',
+    '            <option value="ultimate">The Ultimate Spread - from $2,000/mo</option>',
+    '            <option value="nutty">The Nutty Buddy - from $125/hr</option>',
+    '            <option value="rescue">The Rescue Spread - from $800</option>',
+    '            <option value="unsure">Not sure yet</option>',
+    '          </select>',
+    '        </div>',
+    '        <div class="form-field">',
+    '          <label for="m-message">Message <abbr title="required" aria-label="required">*</abbr></label>',
+    '          <textarea id="m-message" name="message" required aria-required="true"',
+    '            placeholder="Tell us about your business and what kind of help you\'re looking for\u2026"></textarea>',
+    '        </div>',
+    '        <button class="btn" type="submit" style="justify-content:center;">Send Message</button>',
+    '        <p style="font-size:.8rem;color:var(--text-muted);margin-top:.25rem;">',
+    '          Fields marked with * are required. Or call us at <a href="tel:9047082411">904-708-2411</a>.',
+    '        </p>',
+    '      </div>',
+    '    </form>',
+    '  </div>',
+    '</div>',
+  ].join('\n');
+
+  /* Inject modal once */
+  var wrap = document.createElement('div');
+  wrap.innerHTML = MODAL_HTML;
+  document.body.appendChild(wrap.firstChild);
+
+  var modal    = document.getElementById('cmodal');
+  var backdrop = document.getElementById('cmodalBackdrop');
+  var closeBtn = document.getElementById('cmodalClose');
+  var openerEl = null;
+
+  function openModal(triggerEl) {
+    openerEl = triggerEl || document.activeElement;
+    modal.removeAttribute('aria-hidden');
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    /* Focus first input */
+    var first = modal.querySelector('input, select, textarea, button');
+    if (first) first.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (openerEl) openerEl.focus();
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+
+  /* Focus trap */
+  modal.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab' || !modal.classList.contains('is-open')) return;
+    var focusable = modal.querySelectorAll(
+      'button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])'
+    );
+    var first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* Intercept CTA buttons pointing to contact page */
+  if (!isContactPage) {
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[href]');
+      if (!link) return;
+      var href = link.getAttribute('href') || '';
+      if (!href.match(/contact\.html$/)) return;
+      /* Only intercept styled buttons — not plain nav/footer text links */
+      if (!link.classList.contains('btn') && !link.classList.contains('btn-secondary') && !link.classList.contains('nav-cta')) return;
+      e.preventDefault();
+      openModal(link);
+    });
+  }
+
+  /* Handle form submit (placeholder — swap for real backend) */
+  document.getElementById('cmodalForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var panel = modal.querySelector('.cmodal-panel');
+    panel.innerHTML = [
+      '<div style="text-align:center;padding:2rem 1rem;">',
+      '  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"',
+      '       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 1rem">',
+      '    <path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>',
+      '  </svg>',
+      '  <h2 style="margin:0 0 .5rem;">Message Sent!</h2>',
+      '  <p style="color:var(--text-muted);margin:0 0 1.5rem;">',
+      "    We'll be in touch within one business day.",
+      '  </p>',
+      '  <button class="btn" id="cmodalDone">Close</button>',
+      '</div>',
+    ].join('');
+    document.getElementById('cmodalDone').addEventListener('click', closeModal);
+    document.getElementById('cmodalDone').focus();
+  });
+})();
+
 /* ── Maps Address Popovers ────────────────────────────────── */
 (function () {
   var triggers = document.querySelectorAll('.maps-trigger');
