@@ -74,3 +74,39 @@
 
 })();
 
+/* ── Maps Address Popovers ────────────────────────────────── */
+(function () {
+  var triggers = document.querySelectorAll('.maps-trigger');
+  if (!triggers.length) return;
+
+  triggers.forEach(function (trigger) {
+    var popover = trigger.querySelector('.maps-popover');
+    if (!popover) return;
+
+    trigger.querySelector('address').addEventListener('click', function (e) {
+      e.stopPropagation();
+      // Close any other open popovers first
+      document.querySelectorAll('.maps-popover.is-open').forEach(function (p) {
+        if (p !== popover) p.classList.remove('is-open');
+      });
+      popover.classList.toggle('is-open');
+    });
+
+    popover.addEventListener('click', function (e) { e.stopPropagation(); });
+  });
+
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.maps-popover.is-open').forEach(function (p) {
+      p.classList.remove('is-open');
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.maps-popover.is-open').forEach(function (p) {
+        p.classList.remove('is-open');
+      });
+    }
+  });
+})();
+
