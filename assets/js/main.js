@@ -295,7 +295,9 @@
   }
 
   closeBtn.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) {
+    if (!e.target.closest('.cmodal-panel')) closeModal();
+  });
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
