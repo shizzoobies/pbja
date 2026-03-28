@@ -426,7 +426,7 @@
   var charWrap = document.querySelector('.bread-char-wrap');
   if (!charWrap) return;
 
-  var charW = 160;
+  var charW = 256;
   var charH = 248;
   var buttons = document.querySelectorAll('.price-card .btn-secondary, .price-card .btn-gold');
 
