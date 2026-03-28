@@ -172,12 +172,33 @@
         </div>
 
         <div class="google-rating-summary" id="google-rating-summary" aria-live="polite"></div>
-        <div class="testimonials-grid" id="reviews-grid" aria-live="polite">
-          <p class="reviews-loading">Loading reviews…</p>
+
+        <div class="reviews-ticker-wrap">
+          <div class="reviews-ticker" id="reviews-ticker" aria-live="polite">
+            <p class="reviews-loading">Loading reviews…</p>
+          </div>
         </div>
+
         <p class="reviews-google-link">
-          <a href="https://g.co/kgs/your-link" target="_blank" rel="noopener" id="reviews-link">See all reviews on Google</a>
+          <a href="https://maps.google.com/?cid=16820855285451641250" target="_blank" rel="noopener">See all reviews on Google</a>
         </p>
+      </div>
+    </section>
+
+    <!-- ══ Review Modal ══════════════════════════════════════ -->
+    <div class="review-modal-backdrop" id="review-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-author" hidden>
+      <div class="review-modal">
+        <button class="review-modal-close" id="review-modal-close" aria-label="Close review">&times;</button>
+        <div class="review-modal-stars" id="modal-stars"></div>
+        <blockquote class="review-modal-text" id="modal-text"></blockquote>
+        <div class="quote-author" style="margin-top:1.25rem;">
+          <div id="modal-avatar"></div>
+          <div>
+            <p class="quote-author-name" id="modal-author"></p>
+            <p class="quote-author-loc" id="modal-date"></p>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
 

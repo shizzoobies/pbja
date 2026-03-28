@@ -642,49 +642,143 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   color: #fff;
   line-height: 1;
 }
-.google-rating-summary .rating-stars {
-  color: #FBBC04;
-  font-size: 1.2rem;
-  letter-spacing: .05em;
+.google-rating-summary .rating-stars svg {
+  width: 18px;
+  height: 18px;
+  fill: #FBBC04;
+  display: inline-block;
+  vertical-align: middle;
 }
 .google-rating-summary .rating-count {
   font-size: .88rem;
   opacity: .65;
 }
+
+/* Ticker */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.reviews-ticker-wrap {
+  overflow: hidden;
+  /* fade edges */
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  margin: 0 -1rem;
+}
+.reviews-ticker {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: ticker-scroll 40s linear infinite;
+}
+.reviews-ticker:hover { animation-play-state: paused; }
+
+/* Compact review card in ticker */
+.reviews-ticker .quote-card {
+  width: 280px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  padding: 1.25rem;
+}
+.reviews-ticker .quote-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.reviews-ticker .quote-card blockquote {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: .88rem;
+  margin-bottom: .85rem;
+  padding-top: 1rem;
+}
+.reviews-ticker .quote-card::before { font-size: 2.75rem; top: .75rem; left: 1rem; }
+
 .review-star-row {
   display: flex;
   align-items: center;
-  gap: .25rem;
-  margin-bottom: .75rem;
+  gap: .2rem;
+  margin-bottom: .5rem;
 }
 .review-star-row svg {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   fill: #FBBC04;
 }
-.review-star-row .review-date {
-  margin-left: auto;
-  font-size: .78rem;
-  color: var(--text-muted);
-  opacity: .7;
+.review-expand-hint {
+  font-size: .75rem;
+  color: rgba(248,245,240,.4);
+  margin-top: .5rem;
+  font-style: italic;
 }
+
 .reviews-loading {
-  text-align: center;
   color: rgba(248,245,240,.45);
   font-style: italic;
-  grid-column: 1 / -1;
+  padding: 2rem;
 }
 .reviews-google-link {
   text-align: center;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
 }
 .reviews-google-link a {
-  font-size: .88rem;
-  color: rgba(248,245,240,.55);
+  font-size: .85rem;
+  color: rgba(248,245,240,.5);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .reviews-google-link a:hover { color: #fff; }
+
+/* Review Modal */
+.review-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,20,30,.7);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.review-modal-backdrop[hidden] { display: none; }
+.review-modal {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0,0,0,.35);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.review-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: .25rem .5rem;
+}
+.review-modal-close:hover { color: var(--text); }
+.review-modal-stars { display: flex; gap: .25rem; margin-bottom: 1rem; }
+.review-modal-stars svg { width: 18px; height: 18px; fill: #FBBC04; }
+.review-modal-text {
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+}
 
 /* ── 15. Pricing ──────────────────────────────────────────── */
 .pricing-grid {
