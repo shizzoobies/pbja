@@ -322,6 +322,12 @@
     document.addEventListener('click', function (e) {
       var link = e.target.closest('a[href]');
       if (!link) return;
+      /* Always intercept [data-open-modal] links */
+      if (link.hasAttribute('data-open-modal')) {
+        e.preventDefault();
+        openModal(link);
+        return;
+      }
       var href = link.getAttribute('href') || '';
       if (!href.match(/contact\.html$/)) return;
       /* Only intercept styled buttons — not plain nav/footer text links */
