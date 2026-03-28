@@ -1887,8 +1887,9 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   box-shadow: 0 4px 16px rgba(0,0,0,.2);
 }
 .cta-strip .btn:hover {
-  background: var(--surface-2);
-  color: var(--accent-dark);
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(216,108,151,.45);
 }
 .cta-strip .btn-secondary {
   background: transparent;
@@ -1896,9 +1897,9 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   border-color: rgba(255,255,255,.45);
 }
 .cta-strip .btn-secondary:hover {
-  background: rgba(255,255,255,.1);
+  background: var(--pink);
   color: #fff;
-  border-color: rgba(255,255,255,.7);
+  border-color: var(--pink);
 }
 
 /* ── 21. Footer ───────────────────────────────────────────── */
