@@ -421,4 +421,23 @@
   });
 })();
 
+/* ── ASCII jelly spread animation ───────────────────────── */
+(function () {
+  var art = document.querySelector('.jelly-spread-art');
+  if (!art) return;
 
+  var idx = 0;
+  art.innerHTML = art.innerHTML.replace(/~/g, function () {
+    var delay = idx++ * 28;
+    return '<span class="jelly-char" style="transition:opacity 0.1s ease ' + delay + 'ms">~</span>';
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      art.classList.add('is-spreading');
+      observer.disconnect();
+    }
+  }, { threshold: 0.3 });
+
+  observer.observe(art);
+})();

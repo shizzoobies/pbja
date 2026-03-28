@@ -784,6 +784,28 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .pricing-copy h2 { margin-top: 1.5rem; }
 .pricing-copy p { color: var(--text-muted); }
 
+/* ── ASCII jelly spread art ──────────────────────────────── */
+.jelly-spread-wrap {
+  text-align: center;
+  padding: 1.5rem 1rem 0;
+  overflow: hidden;
+}
+.jelly-spread-art {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(0.45rem, 1.3vw, 0.85rem);
+  line-height: 1.5;
+  color: var(--text-muted);
+  user-select: none;
+}
+.jelly-char {
+  color: var(--pink);
+  opacity: 0;
+}
+.jelly-spread-art.is-spreading .jelly-char {
+  opacity: 1;
+}
+
 /* ── Why Choose PBJ ───────────────────────────────────────── */
 .why-choose-section { background: var(--surface-2); }
 
