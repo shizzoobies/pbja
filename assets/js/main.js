@@ -506,3 +506,63 @@
     vel.y *= 0.65;
   }());
 })();
+
+/* ── Google Reviews ──────────────────────────────────────── */
+(function () {
+  var grid    = document.getElementById('reviews-grid');
+  var summary = document.getElementById('google-rating-summary');
+  if (!grid) return;
+
+  function stars(rating) {
+    var s = '';
+    for (var i = 1; i <= 5; i++) {
+      s += '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'
+        + (i <= rating
+          ? '<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'
+          : '<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#FBBC04" stroke-width="1.5"/>')
+        + '</svg>';
+    }
+    return s;
+  }
+
+  function initials(name) {
+    return name.split(' ').slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase();
+  }
+
+  fetch('/api/reviews')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var reviews = data.reviews || [];
+      var rating  = data.rating;
+      var total   = data.user_ratings_total;
+
+      if (summary && rating) {
+        summary.innerHTML =
+          '<span class="rating-score">' + rating.toFixed(1) + '</span>'
+          + '<span class="rating-stars">' + stars(Math.round(rating)) + '</span>'
+          + (total ? '<span class="rating-count">(' + total + ' reviews on Google)</span>' : '');
+      }
+
+      if (!reviews.length) {
+        grid.innerHTML = '<p class="reviews-loading">No reviews found.</p>';
+        return;
+      }
+
+      grid.innerHTML = reviews.map(function (r) {
+        var avatar = r.profile_photo_url
+          ? '<img class="quote-avatar" src="' + r.profile_photo_url + '" alt="' + r.author_name + '" loading="lazy">'
+          : '<div class="quote-avatar" aria-hidden="true">' + initials(r.author_name) + '</div>';
+
+        return '<article class="quote-card">'
+          + '<div class="review-star-row">' + stars(r.rating)
+          + '<span class="review-date">' + (r.relative_time_description || '') + '</span></div>'
+          + '<blockquote>' + r.text + '</blockquote>'
+          + '<div class="quote-author">' + avatar
+          + '<div><p class="quote-author-name">' + r.author_name + '</p></div>'
+          + '</div></article>';
+      }).join('');
+    })
+    .catch(function () {
+      grid.innerHTML = '<p class="reviews-loading">Unable to load reviews right now.</p>';
+    });
+})();

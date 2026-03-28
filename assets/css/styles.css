@@ -626,6 +626,66 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   margin: 0;
 }
 
+/* ── Google Reviews ───────────────────────────────────────── */
+.google-rating-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: rgba(248,245,240,.75);
+}
+.google-rating-summary .rating-score {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.google-rating-summary .rating-stars {
+  color: #FBBC04;
+  font-size: 1.2rem;
+  letter-spacing: .05em;
+}
+.google-rating-summary .rating-count {
+  font-size: .88rem;
+  opacity: .65;
+}
+.review-star-row {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  margin-bottom: .75rem;
+}
+.review-star-row svg {
+  width: 15px;
+  height: 15px;
+  fill: #FBBC04;
+}
+.review-star-row .review-date {
+  margin-left: auto;
+  font-size: .78rem;
+  color: var(--text-muted);
+  opacity: .7;
+}
+.reviews-loading {
+  text-align: center;
+  color: rgba(248,245,240,.45);
+  font-style: italic;
+  grid-column: 1 / -1;
+}
+.reviews-google-link {
+  text-align: center;
+  margin-top: 1.75rem;
+}
+.reviews-google-link a {
+  font-size: .88rem;
+  color: rgba(248,245,240,.55);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.reviews-google-link a:hover { color: #fff; }
+
 /* ── 15. Pricing ──────────────────────────────────────────── */
 .pricing-grid {
   display: grid;
