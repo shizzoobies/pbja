@@ -180,12 +180,12 @@
         </div>
 
         <p class="reviews-google-link">
-          <a href="https://maps.google.com/?cid=16820855285451641250" target="_blank" rel="noopener">See all reviews on Google</a>
+          <a href="#" id="see-all-reviews-link">See all reviews</a>
         </p>
       </div>
     </section>
 
-    <!-- ══ Review Modal ══════════════════════════════════════ -->
+    <!-- ══ Single Review Modal ═══════════════════════════════ -->
     <div class="review-modal-backdrop" id="review-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-author" hidden>
       <div class="review-modal">
         <button class="review-modal-close" id="review-modal-close" aria-label="Close review">&times;</button>
@@ -199,8 +199,19 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- ══ All Reviews Modal ══════════════════════════════════ -->
+    <div class="review-modal-backdrop" id="all-reviews-backdrop" role="dialog" aria-modal="true" aria-labelledby="all-reviews-heading" hidden>
+      <div class="review-modal review-modal--all">
+        <button class="review-modal-close" id="all-reviews-close" aria-label="Close reviews">&times;</button>
+        <h2 class="review-modal-all-heading" id="all-reviews-heading">All Google Reviews</h2>
+        <div id="all-reviews-list"></div>
+        <p style="text-align:center; margin-top:1.5rem;">
+          <a href="https://maps.google.com/?cid=16820855285451641250" target="_blank" rel="noopener" style="font-size:.8rem; color:var(--text-muted); text-decoration:underline;">View on Google Maps</a>
+        </p>
       </div>
-    </section>
+    </div>
 
     <!-- ══ CTA Strip ════════════════════════════════════════ -->
     <section class="cta-strip" aria-labelledby="cta-heading">

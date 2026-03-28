@@ -580,17 +580,18 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .quote-card::before {
   content: '\201C';
   position: absolute;
-  top: 1.25rem;
-  left: 1.75rem;
-  font-size: 4rem;
+  top: .85rem;
+  left: 1.5rem;
+  font-size: 3.25rem;
   line-height: 1;
   color: var(--accent-light);
-  opacity: .4;
+  opacity: .35;
   font-family: Georgia, serif;
+  pointer-events: none;
 }
 .quote-card blockquote {
   margin: 0 0 1.25rem;
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   font-size: .97rem;
   color: var(--text);
   line-height: 1.7;
@@ -693,9 +694,9 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   overflow: hidden;
   font-size: .88rem;
   margin-bottom: .85rem;
-  padding-top: 1rem;
+  padding-top: 1.75rem;
 }
-.reviews-ticker .quote-card::before { font-size: 2.75rem; top: .75rem; left: 1rem; }
+.reviews-ticker .quote-card::before { font-size: 2.5rem; top: .6rem; left: 1rem; }
 
 .review-star-row {
   display: flex;
@@ -779,6 +780,31 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   margin: 0 0 1rem;
   padding: 0;
 }
+.review-modal--all {
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.review-modal-all-heading {
+  font-size: 1.2rem;
+  margin: 0 0 1.5rem;
+  padding-right: 2rem;
+}
+.all-review-item {
+  border-bottom: 1px solid var(--border-light);
+  padding: 1.25rem 0;
+}
+.all-review-item:last-child { border-bottom: none; }
+.all-review-item .review-star-row { margin-bottom: .5rem; }
+.all-review-item blockquote {
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+  font-size: .95rem;
+  margin: 0 0 .75rem;
+}
+.all-review-item .quote-author { gap: .6rem; }
+.all-review-item .quote-avatar { width: 34px; height: 34px; font-size: .78rem; }
 
 /* ── 15. Pricing ──────────────────────────────────────────── */
 .pricing-grid {

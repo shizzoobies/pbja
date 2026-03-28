@@ -507,12 +507,15 @@
   }());
 })();
 
-/* ── Google Reviews ticker + modal ──────────────────────── */
+/* ── Google Reviews ticker + modals ─────────────────────── */
 (function () {
-  var ticker  = document.getElementById('reviews-ticker');
-  var summary = document.getElementById('google-rating-summary');
-  var backdrop = document.getElementById('review-modal-backdrop');
-  var closeBtn = document.getElementById('review-modal-close');
+  var ticker      = document.getElementById('reviews-ticker');
+  var summary     = document.getElementById('google-rating-summary');
+  var backdrop    = document.getElementById('review-modal-backdrop');
+  var closeBtn    = document.getElementById('review-modal-close');
+  var allBackdrop = document.getElementById('all-reviews-backdrop');
+  var allClose    = document.getElementById('all-reviews-close');
+  var seeAllLink  = document.getElementById('see-all-reviews-link');
   if (!ticker) return;
 
   function starsSvg(rating) {
@@ -537,29 +540,33 @@
       : '<div class="quote-avatar" aria-hidden="true">' + initials(r.author_name) + '</div>';
   }
 
-  function openModal(r) {
-    document.getElementById('modal-stars').innerHTML  = starsSvg(r.rating);
-    document.getElementById('modal-text').textContent = r.text;
+  function openSingle(r) {
+    document.getElementById('modal-stars').innerHTML   = starsSvg(r.rating);
+    document.getElementById('modal-text').textContent  = r.text;
     document.getElementById('modal-author').textContent = r.author_name;
     document.getElementById('modal-date').textContent   = r.relative_time_description || '';
-    var av = document.getElementById('modal-avatar');
-    av.innerHTML = avatarHtml(r);
+    document.getElementById('modal-avatar').innerHTML   = avatarHtml(r);
     backdrop.hidden = false;
     document.body.style.overflow = 'hidden';
     closeBtn.focus();
   }
 
-  function closeModal() {
+  function closeSingle() {
     backdrop.hidden = true;
     document.body.style.overflow = '';
   }
 
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  if (backdrop) backdrop.addEventListener('click', function (e) {
-    if (e.target === backdrop) closeModal();
-  });
+  function closeAll() {
+    allBackdrop.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  if (closeBtn)  closeBtn.addEventListener('click', closeSingle);
+  if (allClose)  allClose.addEventListener('click', closeAll);
+  if (backdrop)  backdrop.addEventListener('click',    function (e) { if (e.target === backdrop)    closeSingle(); });
+  if (allBackdrop) allBackdrop.addEventListener('click', function (e) { if (e.target === allBackdrop) closeAll(); });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape') { closeSingle(); closeAll(); }
   });
 
   fetch('/api/reviews')
@@ -581,7 +588,7 @@
         return;
       }
 
-      // Build cards, duplicate for seamless loop
+      // Ticker cards (compact, duplicated for infinite loop)
       function makeCard(r, idx) {
         return '<article class="quote-card" role="button" tabindex="0" aria-label="Read full review by ' + r.author_name + '" data-idx="' + idx + '">'
           + '<div class="review-star-row">' + starsSvg(r.rating) + '</div>'
@@ -594,18 +601,37 @@
       }
 
       var cardHtml = reviews.map(makeCard).join('');
-      ticker.innerHTML = cardHtml + cardHtml; // duplicate for infinite loop
+      ticker.innerHTML = cardHtml + cardHtml;
 
       ticker.querySelectorAll('.quote-card').forEach(function (card) {
-        function open() {
-          var idx = parseInt(card.getAttribute('data-idx'), 10);
-          openModal(reviews[idx]);
-        }
+        function open() { openSingle(reviews[parseInt(card.getAttribute('data-idx'), 10)]); }
         card.addEventListener('click', open);
         card.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
         });
       });
+
+      // "See all reviews" → modal with full list
+      if (seeAllLink) {
+        var allList = document.getElementById('all-reviews-list');
+        allList.innerHTML = reviews.map(function (r) {
+          return '<div class="all-review-item">'
+            + '<div class="review-star-row">' + starsSvg(r.rating)
+            + '<span style="margin-left:auto;font-size:.78rem;color:var(--text-muted);">' + (r.relative_time_description || '') + '</span>'
+            + '</div>'
+            + '<blockquote>' + r.text + '</blockquote>'
+            + '<div class="quote-author">' + avatarHtml(r)
+            + '<div><p class="quote-author-name">' + r.author_name + '</p></div>'
+            + '</div></div>';
+        }).join('');
+
+        seeAllLink.addEventListener('click', function (e) {
+          e.preventDefault();
+          allBackdrop.hidden = false;
+          document.body.style.overflow = 'hidden';
+          allClose.focus();
+        });
+      }
     })
     .catch(function () {
       ticker.innerHTML = '<p class="reviews-loading">Unable to load reviews right now.</p>';
