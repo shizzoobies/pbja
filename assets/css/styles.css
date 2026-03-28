@@ -784,25 +784,21 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .pricing-copy h2 { margin-top: 1.5rem; }
 .pricing-copy p { color: var(--text-muted); }
 
-/* ── ASCII jelly spread art ──────────────────────────────── */
-.jelly-spread-wrap {
-  text-align: center;
-  padding: 1.5rem 1rem 0;
-  overflow: hidden;
-}
-.jelly-spread-art {
-  display: inline-block;
+/* ── ASCII jelly spread art (per card) ───────────────────── */
+.card-art {
   font-family: 'Courier New', Courier, monospace;
-  font-size: clamp(0.45rem, 1.3vw, 0.85rem);
-  line-height: 1.5;
+  font-size: 0.7rem;
+  line-height: 1.4;
   color: var(--text-muted);
+  text-align: center;
+  margin: 0.75rem 0;
   user-select: none;
 }
 .jelly-char {
   color: var(--pink);
   opacity: 0;
 }
-.jelly-spread-art.is-spreading .jelly-char {
+.card-art.is-spreading .jelly-char {
   opacity: 1;
 }
 

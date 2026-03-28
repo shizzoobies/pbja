@@ -421,23 +421,24 @@
   });
 })();
 
-/* ── ASCII jelly spread animation ───────────────────────── */
+/* ── ASCII jelly spread animation (per card) ─────────────── */
 (function () {
-  var art = document.querySelector('.jelly-spread-art');
-  if (!art) return;
+  var arts = document.querySelectorAll('.card-art');
+  if (!arts.length) return;
 
-  var idx = 0;
-  art.innerHTML = art.innerHTML.replace(/~/g, function () {
-    var delay = idx++ * 28;
-    return '<span class="jelly-char" style="transition:opacity 0.1s ease ' + delay + 'ms">~</span>';
+  arts.forEach(function (art) {
+    var idx = 0;
+    art.innerHTML = art.innerHTML.replace(/~/g, function () {
+      return '<span class="jelly-char" style="transition:opacity 0.08s ease ' + (idx++ * 22) + 'ms">~</span>';
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        art.classList.add('is-spreading');
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(art);
   });
-
-  var observer = new IntersectionObserver(function (entries) {
-    if (entries[0].isIntersecting) {
-      art.classList.add('is-spreading');
-      observer.disconnect();
-    }
-  }, { threshold: 0.3 });
-
-  observer.observe(art);
 })();
