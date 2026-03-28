@@ -230,7 +230,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 1.6rem 0;
+  padding: 0.45rem 0;
 }
 
 /* Brand */
@@ -773,6 +773,43 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   margin-top: 1.25rem;
+}
+
+/* ── Bread character ──────────────────────────────────────── */
+.plans-section { position: relative; overflow: visible; }
+
+.bread-char-wrap {
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  z-index: 10;
+  pointer-events: none;
+  animation: bread-bob 3s ease-in-out infinite;
+}
+
+@keyframes bread-bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-14px) rotate(2deg); }
+}
+
+.jelly-drip {
+  animation: jelly-stretch 2.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+@keyframes jelly-stretch {
+  0%, 40%, 100% { transform: scaleY(1); }
+  75%           { transform: scaleY(1.5); }
+}
+
+.jelly-drop {
+  animation: jelly-fall 2.4s ease-in infinite;
+}
+@keyframes jelly-fall {
+  0%        { transform: translateY(0);    opacity: 1; }
+  35%       { transform: translateY(0);    opacity: 1; }
+  85%       { transform: translateY(38px); opacity: 0; }
+  100%      { transform: translateY(38px); opacity: 0; }
 }
 
 /* Pricing copy section */
@@ -2302,7 +2339,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 
 /* Header / footer logo image */
 .site-logo {
-  height: 64px;
+  height: 88px;
   width: auto;
   display: block;
 }
