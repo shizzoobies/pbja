@@ -442,3 +442,86 @@
     observer.observe(art);
   });
 })();
+
+/* ── ASCII mouse-reactive background canvas ──────────────── */
+(function () {
+  var canvas = document.createElement('canvas');
+  var ctx    = canvas.getContext('2d');
+
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;';
+  document.body.insertBefore(canvas, document.body.firstChild);
+
+  var BG    = '#F6F2EF';
+  var CELL  = 24;
+  var R     = 180;
+  var DECAY = 0.87;
+  var JELLY = ['~', '≈', '~', '*', '~', '·'];
+  var BASE  = ['.', '·', ' ', ' ', '.', ' ', ' '];
+
+  var cols, rows, energy, mouse = { x: -9999, y: -9999 };
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    cols   = Math.ceil(canvas.width  / CELL) + 1;
+    rows   = Math.ceil(canvas.height / CELL) + 1;
+    energy = new Float32Array(cols * rows);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  document.addEventListener('mousemove', function (e) {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+  });
+  document.addEventListener('touchmove', function (e) {
+    mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY;
+  }, { passive: true });
+
+  var tick = 0;
+
+  (function loop() {
+    requestAnimationFrame(loop);
+
+    ctx.fillStyle = BG;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.font         = Math.round(CELL * 0.7) + 'px "Courier New",monospace';
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+
+    var mx = mouse.x, my = mouse.y, half = CELL * 0.5;
+
+    for (var i = 0, n = energy.length; i < n; i++) {
+      var c  = i % cols;
+      var r  = (i / cols) | 0;
+      var px = c * CELL + half;
+      var py = r * CELL + half;
+      var dx = px - mx, dy = py - my;
+
+      energy[i] = Math.min(1, energy[i] * DECAY + Math.max(0, 1 - Math.sqrt(dx*dx + dy*dy) / R) * 0.55);
+
+      var e = energy[i], ch, alpha, rgb;
+
+      if (e > 0.5) {
+        ch    = JELLY[(tick + i * 3) % JELLY.length];
+        alpha = 0.55 + e * 0.3;
+        rgb   = '216,108,151';
+      } else if (e > 0.1) {
+        ch    = '~';
+        alpha = e * 0.65;
+        rgb   = '45,175,212';
+      } else {
+        ch    = BASE[(c * 3 + r * 7) % BASE.length];
+        alpha = 0.09;
+        rgb   = '120,110,100';
+      }
+
+      if (!ch || ch === ' ') continue;
+      ctx.fillStyle = 'rgba(' + rgb + ',' + alpha.toFixed(2) + ')';
+      ctx.fillText(ch, px, py);
+    }
+
+    tick++;
+  }());
+})();
