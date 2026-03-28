@@ -59,7 +59,7 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   color: var(--text);
-  background: transparent;
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -784,23 +784,6 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .pricing-copy h2 { margin-top: 1.5rem; }
 .pricing-copy p { color: var(--text-muted); }
 
-/* ── ASCII jelly spread art (per card) ───────────────────── */
-.card-art {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.7rem;
-  line-height: 1.4;
-  color: var(--text-muted);
-  text-align: center;
-  margin: 0.75rem 0;
-  user-select: none;
-}
-.jelly-char {
-  color: var(--pink);
-  opacity: 0;
-}
-.card-art.is-spreading .jelly-char {
-  opacity: 1;
-}
 
 /* ── Why Choose PBJ ───────────────────────────────────────── */
 .why-choose-section { background: var(--surface-2); }

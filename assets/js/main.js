@@ -421,44 +421,25 @@
   });
 })();
 
-/* ── ASCII jelly spread animation (per card) ─────────────── */
+/* ── Jelly slop on card hover (pricing page only) ────────── */
 (function () {
-  var arts = document.querySelectorAll('.card-art');
-  if (!arts.length) return;
+  var cards = document.querySelectorAll('.price-card');
+  if (!cards.length) return;                 // only runs on pricing page
 
-  arts.forEach(function (art) {
-    var idx = 0;
-    art.innerHTML = art.innerHTML.replace(/~/g, function () {
-      return '<span class="jelly-char" style="transition:opacity 0.08s ease ' + (idx++ * 22) + 'ms">~</span>';
-    });
-
-    var observer = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) {
-        art.classList.add('is-spreading');
-        observer.disconnect();
-      }
-    }, { threshold: 0.5 });
-
-    observer.observe(art);
-  });
-})();
-
-/* ── ASCII mouse-reactive background canvas ──────────────── */
-(function () {
   var canvas = document.createElement('canvas');
   var ctx    = canvas.getContext('2d');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:10;pointer-events:none;';
+  document.body.appendChild(canvas);
 
-  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;';
-  document.body.insertBefore(canvas, document.body.firstChild);
-
-  var BG    = '#F6F2EF';
-  var CELL  = 24;
-  var R     = 180;
-  var DECAY = 0.87;
-  var JELLY = ['~', '≈', '~', '*', '~', '·'];
-  var BASE  = ['.', '·', ' ', ' ', '.', ' ', ' '];
+  // jelly-slop chars: blobs, drips, splats
+  var BLOBS  = ['@', 'o', 'O', '0', 'Q', 'G'];
+  var DRIPS  = ['~', '≈', ',', ';', '.'];
+  var CELL   = 18;
+  var R      = 100;   // influence radius
+  var DECAY  = 0.84;
 
   var cols, rows, energy, mouse = { x: -9999, y: -9999 };
+  var active = false;
 
   function resize() {
     canvas.width  = window.innerWidth;
@@ -467,26 +448,21 @@
     rows   = Math.ceil(canvas.height / CELL) + 1;
     energy = new Float32Array(cols * rows);
   }
-
   window.addEventListener('resize', resize);
   resize();
 
-  document.addEventListener('mousemove', function (e) {
-    mouse.x = e.clientX; mouse.y = e.clientY;
+  cards.forEach(function (card) {
+    card.addEventListener('mouseenter', function () { active = true; });
+    card.addEventListener('mouseleave', function () { active = false; });
   });
-  document.addEventListener('touchmove', function (e) {
-    mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY;
-  }, { passive: true });
+  document.addEventListener('mousemove', function (e) { mouse.x = e.clientX; mouse.y = e.clientY; });
 
   var tick = 0;
-
   (function loop() {
     requestAnimationFrame(loop);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = BG;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.font         = Math.round(CELL * 0.7) + 'px "Courier New",monospace';
+    ctx.font         = Math.round(CELL * 0.75) + 'px "Courier New",monospace';
     ctx.textAlign    = 'center';
     ctx.textBaseline = 'middle';
 
@@ -498,26 +474,33 @@
       var px = c * CELL + half;
       var py = r * CELL + half;
       var dx = px - mx, dy = py - my;
+      // slightly squash vertical so blobs spread wider than tall (jelly splat shape)
+      var dist = Math.sqrt(dx * dx * 0.7 + dy * dy * 1.4);
 
-      energy[i] = Math.min(1, energy[i] * DECAY + Math.max(0, 1 - Math.sqrt(dx*dx + dy*dy) / R) * 0.55);
+      var boost = active ? Math.max(0, 1 - dist / R) * 0.5 : 0;
+      energy[i] = Math.min(1, energy[i] * DECAY + boost);
 
-      var e = energy[i], ch, alpha, rgb;
+      var e = energy[i];
+      if (e < 0.04) continue;
 
-      if (e > 0.5) {
-        ch    = JELLY[(tick + i * 3) % JELLY.length];
-        alpha = 0.55 + e * 0.3;
-        rgb   = '216,108,151';
-      } else if (e > 0.1) {
-        ch    = '~';
-        alpha = e * 0.65;
-        rgb   = '45,175,212';
+      var ch, alpha, rgb;
+      if (e > 0.55) {
+        // dense centre — blobby core
+        ch    = BLOBS[(tick * 0 + i + (tick >> 3)) % BLOBS.length];
+        alpha = e * 0.38;
+        rgb   = '192,24,90';   // deep jelly red-pink
+      } else if (e > 0.22) {
+        // spreading edge — drippy
+        ch    = DRIPS[(tick + i * 3) % DRIPS.length];
+        alpha = e * 0.45;
+        rgb   = '216,108,151'; // mid pink
       } else {
-        ch    = BASE[(c * 3 + r * 7) % BASE.length];
-        alpha = 0.09;
-        rgb   = '120,110,100';
+        // outer fade — tiny drips
+        ch    = DRIPS[(i * 7) % DRIPS.length];
+        alpha = e * 0.5;
+        rgb   = '45,175,212';  // teal accent
       }
 
-      if (!ch || ch === ' ') continue;
       ctx.fillStyle = 'rgba(' + rgb + ',' + alpha.toFixed(2) + ')';
       ctx.fillText(ch, px, py);
     }
