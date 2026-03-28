@@ -2716,32 +2716,24 @@ body.splash-active { overflow: hidden; }
 .orbit-center {
   position: absolute;
   top: 50%; left: 50%;
-  width: 164px; height: 164px;
+  width: 180px; height: 180px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--surface);
-  box-shadow:
-    0 0 0 8px rgba(196,117,140,.12),
-    0 0 0 16px rgba(196,117,140,.06),
-    var(--shadow-lg);
+  overflow: visible;
+  border: none;
+  box-shadow: none;
   z-index: 2;
   cursor: pointer;
   background: none;
   padding: 0;
-  transition: box-shadow .2s, transform .2s;
+  transition: transform .2s;
 }
 .orbit-center:hover {
-  box-shadow:
-    0 0 0 8px rgba(196,117,140,.22),
-    0 0 0 20px rgba(196,117,140,.10),
-    var(--shadow-lg);
   transform: translate(-50%, -50%) scale(1.04);
 }
 .orbit-center img {
   width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
   display: block;
 }
 .orbit-center-hint {
