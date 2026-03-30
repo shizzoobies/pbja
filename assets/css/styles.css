@@ -20,8 +20,8 @@
   --accent-light:  #9FE2F0;
   --gold:          #B8882A;
   --gold-bg:       #FDF6E3;
-  --dark-teal:     #0D2B35;
-  --dark-teal-2:   #091E26;
+  --dark-teal:     #D6EEF5;
+  --dark-teal-2:   #C4E4EF;
   --pink:          #D86C97;
   --pink-dark:     #B54D7A;
   --pink-mid:      #E8A0BC;
@@ -256,7 +256,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 55%, #0D2B35 100%);
+  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 100%);
   display: grid;
   place-items: center;
   color: #fff;
@@ -489,11 +489,11 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .page-hero h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: .6rem;
-  color: #FAF8F4;
+  color: var(--text);
 }
 
 .page-hero p {
-  color: rgba(250, 248, 244, .65);
+  color: var(--text-muted);
   font-size: 1.08rem;
   max-width: 60ch;
   margin: 0;
@@ -501,11 +501,11 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 
 .page-hero .eyebrow,
 .page-hero .kicker {
-  color: var(--accent-light);
+  color: var(--pink);
 }
 
 .page-hero a {
-  color: var(--accent-light);
+  color: var(--accent-dark);
 }
 
 /* ── 12. Cards (shared) ───────────────────────────────────── */
@@ -1034,7 +1034,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .why-choose-card-icon {
   width: 48px; height: 48px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 55%, #0D2B35 100%);
+  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 100%);
   display: grid;
   place-items: center;
   color: #fff;
@@ -1869,34 +1869,34 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 
 /* ── 20. CTA Strip ────────────────────────────────────────── */
 .cta-strip {
-  background: linear-gradient(135deg, #0A1F28 0%, #2A8BA0 55%, #48C2E0 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #C4E4EF 0%, #D6EEF5 55%, #E8F5FA 100%);
+  color: var(--text);
   padding: 3.5rem 0;
   text-align: center;
 }
 .cta-strip h2 {
-  color: #fff;
+  color: var(--text);
   margin-bottom: .5rem;
 }
 .cta-strip p {
-  color: rgba(255,255,255,.82);
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
 }
 .cta-strip .btn {
-  background: #fff;
-  color: var(--accent-dark);
-  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(216,108,151,.3);
 }
 .cta-strip .btn:hover {
-  background: var(--pink);
+  background: var(--pink-dark);
   color: #fff;
   box-shadow: 0 6px 20px rgba(216,108,151,.45);
 }
 .cta-strip .btn-secondary {
   background: transparent;
-  color: #fff;
-  border-color: rgba(255,255,255,.45);
+  color: var(--text);
+  border-color: var(--text-muted);
 }
 .cta-strip .btn-secondary:hover {
   background: var(--pink);
@@ -1907,7 +1907,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 /* ── 21. Footer ───────────────────────────────────────────── */
 .site-footer {
   background: var(--dark-teal-2);
-  color: rgba(255,255,255,.75);
+  color: var(--text-muted);
   padding: 3rem 0 1.5rem;
 }
 
@@ -1923,14 +1923,14 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   align-items: center;
   gap: .75rem;
   text-decoration: none;
-  color: #fff;
+  color: var(--text);
   font-weight: 800;
   margin-bottom: .85rem;
 }
 .footer-brand .logo-badge {
-  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 55%, #0D2B35 100%);
+  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 100%);
 }
-.footer-brand:hover { color: var(--accent-light); }
+.footer-brand:hover { color: var(--accent-dark); }
 
 .footer-tagline {
   font-size: .88rem;
@@ -1947,15 +1947,15 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
-  background: rgba(255,255,255,.1);
+  background: rgba(0,0,0,.06);
   display: grid;
   place-items: center;
-  color: rgba(255,255,255,.7);
+  color: var(--text-muted);
   text-decoration: none;
   transition: background .2s, color .2s;
 }
 .social-link:hover {
-  background: var(--accent);
+  background: var(--pink);
   color: #fff;
 }
 .social-link svg { width: 16px; height: 16px; }
@@ -1965,7 +1965,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.68);
+  color: var(--text);
   margin-bottom: 1rem;
 }
 .footer-nav-list {
@@ -1977,13 +1977,13 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   gap: .5rem;
 }
 .footer-nav-list a {
-  color: rgba(255,255,255,.7);
+  color: var(--text-muted);
   text-decoration: none;
   font-size: .9rem;
   transition: color .2s;
 }
-.footer-nav-list a:hover { color: #fff; }
-.footer-nav-list a[aria-current="page"] { color: var(--accent-light); }
+.footer-nav-list a:hover { color: var(--pink); }
+.footer-nav-list a[aria-current="page"] { color: var(--pink); }
 
 .footer-contact-item {
   display: flex;
@@ -1992,12 +1992,12 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   font-size: .88rem;
   margin-bottom: .65rem;
 }
-.footer-contact-item svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 3px; color: var(--accent-light); }
-.footer-contact-item a { color: rgba(255,255,255,.75); text-decoration: none; }
-.footer-contact-item a:hover { color: #fff; }
+.footer-contact-item svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 3px; color: var(--accent-dark); }
+.footer-contact-item a { color: var(--text-muted); text-decoration: none; }
+.footer-contact-item a:hover { color: var(--pink); }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(0,0,0,.1);
   padding-top: 1.25rem;
   display: flex;
   gap: 1rem;
@@ -2007,7 +2007,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .footer-copy {
   font-size: .82rem;
-  color: rgba(255,255,255,.65);
+  color: var(--text-muted);
 }
 .footer-legal {
   display: flex;
@@ -2015,11 +2015,11 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .footer-legal a {
   font-size: .82rem;
-  color: rgba(255,255,255,.65);
+  color: var(--text-muted);
   text-decoration: none;
   transition: color .2s;
 }
-.footer-legal a:hover { color: rgba(255,255,255,.75); }
+.footer-legal a:hover { color: var(--pink); }
 
 /* ── 22. Utilities ────────────────────────────────────────── */
 .visually-hidden {
@@ -2237,9 +2237,9 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 
 /* ── Text on dark backgrounds ────────────────────────────── */
-.on-dark           { color: #F8F5F0; }
-.eyebrow--light    { color: var(--accent-light); }
-.lead--light       { color: rgba(248,245,240,.68); }
+.on-dark           { color: var(--text); }
+.eyebrow--light    { color: var(--pink); }
+.lead--light       { color: var(--text-muted); }
 
 /* Eyebrow with inline leading rule */
 .eyebrow--rule {
@@ -2256,22 +2256,22 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   flex-shrink: 0;
 }
 
-/* ── Buttons for dark backgrounds ────────────────────────── */
+/* ── Buttons for light-blue backgrounds ──────────────────── */
 .btn--inverse {
-  background: #fff;
-  color: var(--accent-dark);
-  box-shadow: 0 4px 20px rgba(0,0,0,.35);
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(216,108,151,.3);
 }
 .btn--inverse:hover {
-  background: var(--pink);
+  background: var(--pink-dark);
   color: #fff;
   box-shadow: 0 6px 20px rgba(216, 108, 151, .45);
 }
 
 .btn-ghost {
   background: transparent;
-  color: rgba(248,245,240,.88);
-  border: 2px solid rgba(248,245,240,.22);
+  color: var(--text);
+  border: 2px solid var(--text-muted);
 }
 .btn-ghost:hover {
   background: var(--pink);
@@ -2285,7 +2285,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   gap: 2.25rem;
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid rgba(0,0,0,.1);
   flex-wrap: wrap;
 }
 
@@ -2302,7 +2302,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .hero-stat-lbl {
   font-size: .68rem;
   font-weight: 600;
-  color: rgba(248,245,240,.42);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: .1em;
 }
@@ -2310,21 +2310,21 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 /* ── Dark section ────────────────────────────────────────── */
 .section--dark {
   background: var(--dark-teal);
-  color: #F8F5F0;
+  color: var(--text);
 }
 .section--dark h2,
-.section--dark h3 { color: #F8F5F0; }
-.section--dark .eyebrow { color: var(--accent-light); }
-.section--dark .lead    { color: rgba(248,245,240,.62); }
+.section--dark h3 { color: var(--text); }
+.section--dark .eyebrow { color: var(--pink); }
+.section--dark .lead    { color: var(--text-muted); }
 
 .section--dark .quote-card {
-  background: rgba(255,255,255,.04);
-  border-color: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.5);
+  border-color: rgba(0,0,0,.08);
 }
-.section--dark .quote-card blockquote { color: rgba(248,245,240,.82); }
-.section--dark .quote-card::before    { color: var(--accent-light); opacity: .25; }
-.section--dark .quote-author-name     { color: #F8F5F0; }
-.section--dark .quote-author-loc      { color: rgba(248,245,240,.45); }
+.section--dark .quote-card blockquote { color: var(--text); }
+.section--dark .quote-card::before    { color: var(--pink); opacity: .25; }
+.section--dark .quote-author-name     { color: var(--text); }
+.section--dark .quote-author-loc      { color: var(--text-muted); }
 
 /* ── Service card hover accent ───────────────────────────── */
 .service-card {
@@ -2415,7 +2415,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0,0,0,.55);
+  box-shadow: 0 32px 80px rgba(0,0,0,.15);
   background: var(--dark-teal);
 }
 
@@ -2533,14 +2533,14 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 /* All eyebrow labels go pink */
 .eyebrow { color: var(--pink); }
 
-/* Eyebrow on dark backgrounds — lighter pink */
-.section--dark .eyebrow { color: var(--pink-mid); }
+/* Eyebrow on tinted backgrounds */
+.section--dark .eyebrow { color: var(--pink); }
 
 /* Default section decorative rule — pink */
 .section-rule { background: var(--pink); }
 
 /* Hero inline stats — pink numbers */
-.hero-stat-val { color: var(--pink-mid); }
+.hero-stat-val { color: var(--pink); }
 
 /* Service card hover — pink left accent bar */
 .service-card:hover { border-left-color: var(--pink); }
@@ -2563,8 +2563,8 @@ img.quote-avatar {
   background: #fff;
 }
 
-/* Quote marks on dark section — pink */
-.section--dark .quote-card::before { color: var(--pink-mid); opacity: .4; }
+/* Quote marks on tinted section — pink */
+.section--dark .quote-card::before { color: var(--pink); opacity: .4; }
 
 /* Credential dots — pink */
 .cred-dot { background: var(--pink); }
@@ -2634,7 +2634,7 @@ body.splash-active { overflow: hidden; }
   z-index: 1;
   height: 200px;
   width: auto;
-  filter: brightness(0) invert(1) drop-shadow(0 0 32px rgba(196,117,140,.32));
+  filter: drop-shadow(0 0 32px rgba(196,117,140,.32));
   animation: splash-grow 3.3s ease-in forwards;
   transform-origin: center center;
 }
@@ -2643,7 +2643,7 @@ body.splash-active { overflow: hidden; }
 .splash-tagline {
   position: relative;
   z-index: 1;
-  color: var(--pink-mid);
+  color: var(--pink);
   font-size: .72rem;
   font-weight: 700;
   letter-spacing: .22em;
