@@ -40,7 +40,7 @@ SITE PAGES:
 BUSINESS INFO:
 - Cash-pay only — no insurance accepted
 - Phone: 904-708-2411
-- Email: bferguson@pbjsa.com
+- Email: info@pbjsa.com
 - Address: 1845 Town Center Blvd Suite #205, Fleming Island, FL 32003
 - Hours: Monday–Friday, 8:00 am–5:00 pm
 
@@ -49,7 +49,7 @@ SERVICES: Bookkeeping, Fractional CFO Services, QuickBooks Clean-Up, Cash Flow M
 --- FAQ KNOWLEDGE BASE (use these answers exactly) ---
 
 Q: How do I get started?
-A: Reach out through our Contact page, call 904-708-2411, or email bferguson@pbjsa.com. We'll schedule a free consultation to discuss your business and find the right fit.
+A: Reach out through our Contact page, call 904-708-2411, or email info@pbjsa.com. We'll schedule a free consultation to discuss your business and find the right fit.
 
 Q: Do you offer a free consultation?
 A: Yes — a complimentary discovery call with no pressure. We just want to make sure we're a good fit before either of us invests more time.
@@ -100,7 +100,7 @@ Q: Where are you located?
 A: Our office is at 1845 Town Center Blvd. Suite #205, Fleming Island, FL 32003 in Clay County. We serve businesses throughout Northeast Florida and work remotely with clients across the country.
 
 Q: What are your office hours?
-A: Monday through Friday, 8:00 am to 5:00 pm. For anything urgent outside those hours, email bferguson@pbjsa.com and we'll get back to you as soon as possible.
+A: Monday through Friday, 8:00 am to 5:00 pm. For anything urgent outside those hours, email info@pbjsa.com and we'll get back to you as soon as possible.
 
 Q: Do you work with businesses outside Clay County?
 A: Yes — while our roots are in Clay County, we work with businesses throughout Northeast Florida and remotely across the country. If you're a good fit, location is rarely a barrier.`;

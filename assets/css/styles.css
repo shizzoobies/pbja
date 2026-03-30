@@ -1906,8 +1906,8 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 
 /* ── 21. Footer ───────────────────────────────────────────── */
 .site-footer {
-  background: var(--dark-teal-2);
-  color: var(--text-muted);
+  background: #1A1A1A;
+  color: rgba(255,255,255,.75);
   padding: 3rem 0 1.5rem;
 }
 
@@ -1923,14 +1923,14 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   align-items: center;
   gap: .75rem;
   text-decoration: none;
-  color: var(--text);
+  color: #fff;
   font-weight: 800;
   margin-bottom: .85rem;
 }
 .footer-brand .logo-badge {
   background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 100%);
 }
-.footer-brand:hover { color: var(--accent-dark); }
+.footer-brand:hover { color: var(--accent-light); }
 
 .footer-tagline {
   font-size: .88rem;
@@ -1947,10 +1947,10 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
-  background: rgba(0,0,0,.06);
+  background: rgba(255,255,255,.1);
   display: grid;
   place-items: center;
-  color: var(--text-muted);
+  color: rgba(255,255,255,.7);
   text-decoration: none;
   transition: background .2s, color .2s;
 }
@@ -1965,7 +1965,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--text);
+  color: rgba(255,255,255,.68);
   margin-bottom: 1rem;
 }
 .footer-nav-list {
@@ -1977,13 +1977,13 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   gap: .5rem;
 }
 .footer-nav-list a {
-  color: var(--text-muted);
+  color: rgba(255,255,255,.7);
   text-decoration: none;
   font-size: .9rem;
   transition: color .2s;
 }
-.footer-nav-list a:hover { color: var(--pink); }
-.footer-nav-list a[aria-current="page"] { color: var(--pink); }
+.footer-nav-list a:hover { color: #fff; }
+.footer-nav-list a[aria-current="page"] { color: var(--pink-mid); }
 
 .footer-contact-item {
   display: flex;
@@ -1992,12 +1992,12 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   font-size: .88rem;
   margin-bottom: .65rem;
 }
-.footer-contact-item svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 3px; color: var(--accent-dark); }
-.footer-contact-item a { color: var(--text-muted); text-decoration: none; }
-.footer-contact-item a:hover { color: var(--pink); }
+.footer-contact-item svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 3px; color: var(--accent-light); }
+.footer-contact-item a { color: rgba(255,255,255,.75); text-decoration: none; }
+.footer-contact-item a:hover { color: #fff; }
 
 .footer-bottom {
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.1);
   padding-top: 1.25rem;
   display: flex;
   gap: 1rem;
@@ -2007,7 +2007,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .footer-copy {
   font-size: .82rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,.65);
 }
 .footer-legal {
   display: flex;
@@ -2015,11 +2015,11 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .footer-legal a {
   font-size: .82rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,.65);
   text-decoration: none;
   transition: color .2s;
 }
-.footer-legal a:hover { color: var(--pink); }
+.footer-legal a:hover { color: #fff; }
 
 /* ── 22. Utilities ────────────────────────────────────────── */
 .visually-hidden {
