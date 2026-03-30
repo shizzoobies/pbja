@@ -15,9 +15,9 @@
   --surface-3:     #E4DDD6;
   --text:          #1C1917;
   --text-muted:    #5C5248;
-  --accent:        #2DAFD4;
-  --accent-dark:   #1F8DAB;
-  --accent-light:  #7DD4E8;
+  --accent:        #48C2E0;
+  --accent-dark:   #2EA3C5;
+  --accent-light:  #9FE2F0;
   --gold:          #B8882A;
   --gold-bg:       #FDF6E3;
   --dark-teal:     #0D2B35;
@@ -256,7 +256,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #2DAFD4 0%, #1F8DAB 55%, #0D2B35 100%);
+  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 55%, #0D2B35 100%);
   display: grid;
   place-items: center;
   color: #fff;
@@ -1032,7 +1032,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .why-choose-card-icon {
   width: 48px; height: 48px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #2DAFD4 0%, #1F8DAB 55%, #0D2B35 100%);
+  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 55%, #0D2B35 100%);
   display: grid;
   place-items: center;
   color: #fff;
@@ -1867,7 +1867,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 
 /* ── 20. CTA Strip ────────────────────────────────────────── */
 .cta-strip {
-  background: linear-gradient(135deg, #0A1F28 0%, #1A6B80 55%, #2DAFD4 100%);
+  background: linear-gradient(135deg, #0A1F28 0%, #2A8BA0 55%, #48C2E0 100%);
   color: #fff;
   padding: 3.5rem 0;
   text-align: center;
@@ -1926,7 +1926,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   margin-bottom: .85rem;
 }
 .footer-brand .logo-badge {
-  background: linear-gradient(135deg, #2DAFD4 0%, #1F8DAB 55%, #0D2B35 100%);
+  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 55%, #0D2B35 100%);
 }
 .footer-brand:hover { color: var(--accent-light); }
 
@@ -2839,7 +2839,7 @@ body.splash-active { overflow: hidden; }
 .svc-modal-card-icon {
   width: 40px; height: 40px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #2DAFD4 0%, #1F8DAB 55%, #0D2B35 100%);
+  background: linear-gradient(135deg, #48C2E0 0%, #2EA3C5 55%, #0D2B35 100%);
   display: grid;
   place-items: center;
   margin-bottom: .85rem;
