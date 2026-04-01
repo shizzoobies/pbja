@@ -2354,7 +2354,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   height: 3px;
   background: var(--accent);
   border: none;
-  margin: 0 0 1.5rem;
+  margin: 0 auto 1.5rem;
 }
 
 /* ── Responsive split hero ───────────────────────────────── */
