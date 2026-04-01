@@ -2863,9 +2863,10 @@ body.splash-active { overflow: hidden; }
   box-shadow: 0 0 0 3px rgba(216,108,151,.12);
 }
 .svc-modal-card-icon {
-  width: 48px; height: 48px;
-  border-radius: 10px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
   background: linear-gradient(135deg, #FDF2F5 0%, #F8DDE5 100%);
+  border: 2px solid var(--pink-mid);
   display: grid;
   place-items: center;
   margin-bottom: .85rem;
