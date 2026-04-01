@@ -174,14 +174,14 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   transition: background .2s, color .2s, box-shadow .2s, transform .15s;
 }
 .btn {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(139, 77, 47, .28);
-}
-.btn:hover {
   background: var(--pink);
   color: #fff;
-  box-shadow: 0 6px 20px rgba(216, 108, 151, .38);
+  box-shadow: 0 4px 16px rgba(216, 108, 151, .28);
+}
+.btn:hover {
+  background: var(--pink-dark);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(216, 108, 151, .45);
   transform: translateY(-1px);
 }
 .btn:active { transform: translateY(0); }
@@ -1165,19 +1165,19 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   padding: .68rem 1.1rem .68rem .85rem;
   border-radius: var(--radius-pill);
   border: none;
-  background: var(--accent);
+  background: var(--pink);
   color: #fff;
   font-size: .82rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(196,137,106,.45);
+  box-shadow: 0 4px 20px rgba(216,108,151,.45);
   transition: background .18s, transform .15s, box-shadow .18s;
 }
 .chat-toggle:hover {
-  background: var(--accent-dark);
+  background: var(--pink-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(196,137,106,.55);
+  box-shadow: 0 6px 28px rgba(216,108,151,.55);
 }
 .chat-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .chat-toggle-label { font-size: .82rem; }
@@ -1884,14 +1884,14 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   font-size: 1.05rem;
 }
 .cta-strip .btn {
-  background: var(--accent);
+  background: var(--pink);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(72,194,224,.3);
+  box-shadow: 0 4px 16px rgba(216,108,151,.3);
 }
 .cta-strip .btn:hover {
-  background: var(--accent-dark);
+  background: var(--pink-dark);
   color: #fff;
-  box-shadow: 0 6px 20px rgba(72,194,224,.45);
+  box-shadow: 0 6px 20px rgba(216,108,151,.45);
 }
 .cta-strip .btn-secondary {
   background: transparent;
@@ -1899,9 +1899,9 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   border-color: var(--text-muted);
 }
 .cta-strip .btn-secondary:hover {
-  background: var(--accent);
+  background: var(--pink);
   color: #fff;
-  border-color: var(--accent);
+  border-color: var(--pink);
 }
 
 /* ── 21. Footer ───────────────────────────────────────────── */
