@@ -14,7 +14,7 @@
   var scriptSrc = (document.currentScript || {}).src || '';
   var BASE = scriptSrc.replace(/assets\/js\/chat\.js.*$/, '') ||
              (window.location.pathname.includes('/blog/') ? '../' : '');
-  var AVATAR = BASE + 'assets/img/brittany-headshot.png';
+  var AVATAR = BASE + 'assets/img/brittany-headshot.webp';
 
   /* ── Widget HTML ─────────────────────────────────────────── */
   var WIDGET_HTML = [
