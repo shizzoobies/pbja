@@ -22,7 +22,7 @@
   --gold-bg:       #FDF6E3;
   --dark-teal:     #48C2E0;
   --dark-teal-2:   #3AB0CC;
-  --pink:          #D86C97;
+  --pink:          #FC8EAC;
   --pink-dark:     #B54D7A;
   --pink-mid:      #E8A0BC;
   --pink-light:    #FCEEF5;
@@ -175,7 +175,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .btn {
   background: var(--pink);
-  color: #1C1917;
+  color: #fff;
   box-shadow: 0 4px 16px rgba(216, 108, 151, .28);
 }
 .btn:hover {
@@ -201,12 +201,12 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 
 .btn-gold {
   background: var(--gold);
-  color: #1C1917;
+  color: #fff;
   box-shadow: 0 4px 16px rgba(184, 136, 42, .32);
 }
 .btn-gold:hover {
   background: var(--pink);
-  color: #1C1917;
+  color: #fff;
   box-shadow: 0 6px 20px rgba(216, 108, 151, .38);
   transform: translateY(-1px);
 }
@@ -1167,7 +1167,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   border-radius: var(--radius-pill);
   border: none;
   background: var(--pink);
-  color: #1C1917;
+  color: #fff;
   font-size: .82rem;
   font-weight: 700;
   font-family: inherit;
@@ -1422,7 +1422,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .btn-listen:hover,
 .btn-listen[aria-expanded="true"] {
   background: var(--pink);
-  color: #1C1917;
+  color: #fff;
 }
 .btn-listen svg { flex-shrink: 0; }
 
@@ -1889,7 +1889,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .cta-strip .btn {
   background: var(--pink);
-  color: #1C1917;
+  color: #fff;
   box-shadow: 0 4px 16px rgba(216,108,151,.3);
 }
 .cta-strip .btn:hover {
@@ -1904,7 +1904,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .cta-strip .btn-secondary:hover {
   background: var(--pink);
-  color: #1C1917;
+  color: #fff;
   border-color: var(--pink);
 }
 
@@ -1960,7 +1960,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .social-link:hover {
   background: var(--pink);
-  color: #1C1917;
+  color: #fff;
 }
 .social-link svg { width: 16px; height: 16px; }
 
@@ -1987,7 +1987,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   transition: color .2s;
 }
 .footer-nav-list a:hover { color: #fff; }
-.footer-nav-list a[aria-current="page"] { color: var(--pink-mid); }
+.footer-nav-list a[aria-current="page"] { color: var(--pink); }
 
 .footer-contact-item {
   display: flex;
@@ -2270,7 +2270,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 /* ── Buttons for teal backgrounds ────────────────────────── */
 .btn--inverse {
   background: var(--pink);
-  color: #1C1917;
+  color: #fff;
   box-shadow: 0 4px 20px rgba(216,108,151,.35);
 }
 .btn--inverse:hover {
@@ -2286,7 +2286,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 }
 .btn-ghost:hover {
   background: var(--pink);
-  color: #1C1917;
+  color: #fff;
   border-color: var(--pink);
 }
 
@@ -2458,7 +2458,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   border: 2px solid rgba(196,117,140,.35);
   display: grid;
   place-items: center;
-  color: var(--pink-mid);
+  color: var(--pink);
 }
 .video-placeholder-icon svg { width: 34px; height: 34px; }
 .video-placeholder p {
@@ -2567,7 +2567,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 
 /* Quote card avatars — pink gradient (text initials fallback) */
 .quote-avatar {
-  background: linear-gradient(135deg, var(--pink-mid), var(--pink));
+  background: linear-gradient(135deg, var(--pink), var(--pink));
 }
 /* Image avatars: no gradient background */
 img.quote-avatar {
@@ -2599,10 +2599,10 @@ img.quote-avatar {
 .form-field label abbr { color: var(--pink); }
 
 /* Footer contact icons — pink */
-.footer-contact-item svg { color: var(--pink-mid); }
+.footer-contact-item svg { color: var(--pink); }
 
 /* Footer nav active link — pink */
-.footer-nav-list a[aria-current="page"] { color: var(--pink-mid); }
+.footer-nav-list a[aria-current="page"] { color: var(--pink); }
 
 /* About page portrait blob — soft pink */
 .portrait-editorial::before { background: var(--pink-light); }
@@ -2858,7 +2858,7 @@ body.splash-active { overflow: hidden; }
   width: 56px; height: 56px;
   border-radius: 50%;
   background: linear-gradient(135deg, #FDF2F5 0%, #F8DDE5 100%);
-  border: 2px solid var(--pink-mid);
+  border: 2px solid var(--pink);
   display: grid;
   place-items: center;
   margin-bottom: .85rem;
