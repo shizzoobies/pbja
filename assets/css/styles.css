@@ -201,7 +201,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 
 .btn-gold {
   background: var(--gold);
-  color: #fff;
+  color: #1C1917;
   box-shadow: 0 4px 16px rgba(184, 136, 42, .32);
 }
 .btn-gold:hover {
@@ -1701,7 +1701,7 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
 .form-field textarea {
   width: 100%;
   padding: .75rem 1rem;
-  border: 1.5px solid #998F85;
+  border: 1.5px solid #8A8078;
   border-radius: var(--radius-sm);
   background: var(--bg);
   color: var(--text);
@@ -3149,7 +3149,7 @@ body.splash-active { overflow: hidden; }
   font-weight: 700;
   letter-spacing: .03em;
   text-transform: uppercase;
-  color: var(--accent-dark);
+  color: #0E7490;
   margin: 0 0 1.25rem;
 }
 
