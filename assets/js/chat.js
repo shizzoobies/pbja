@@ -137,14 +137,84 @@
       sendMessage(text);
     });
 
+    /* ── Fallback knowledge base (no API needed) ─────────── */
+    var FALLBACK_QA = [
+      { keys: ['get started', 'how do i', 'begin', 'sign up', 'start'],
+        a: 'Reach out through our [Contact page](/contact.html), call 904-708-2411, or email info@pbjsa.com. We\'ll schedule a free consultation to find the right fit!' },
+      { keys: ['free consultation', 'discovery call', 'free call'],
+        a: 'Yes! We offer a complimentary discovery call with no pressure. We just want to make sure we\'re a good fit. [Book a call](/contact.html)' },
+      { keys: ['first meeting', 'bring', 'prepare'],
+        a: 'Just come as you are! It helps to have a general sense of your bookkeeping situation and any goals. We\'ll take it from there.' },
+      { keys: ['how quickly', 'how soon', 'how long', 'turnaround', 'onboarding'],
+        a: 'Typically within one to two weeks. Onboarding is straightforward. We set up secure access, review your books, and hit the ground running.' },
+      { keys: ['service', 'what do you offer', 'what areas', 'specialize'],
+        a: 'We specialize in Bookkeeping, Fractional CFO Services, QuickBooks Clean-Up, Cash Flow Management, Budgeting & Forecasting, Financial Reporting, and Financial Planning. See our [Services page](/services.html) for details!' },
+      { keys: ['tax filing', 'tax prep', 'taxes'],
+        a: 'We offer tax planning and compliance support, keeping you organized year-round. We typically work alongside your CPA rather than replacing them. [Learn more](/services.html)' },
+      { keys: ['fractional cfo', 'cfo'],
+        a: 'A Fractional CFO gives you high-level financial strategy without a full-time executive hire. Great for growth-stage businesses. [Learn more](/services.html)' },
+      { keys: ['quickbooks', 'qbo', 'mess', 'clean up', 'cleanup'],
+        a: 'Absolutely! QuickBooks clean-up is one of our specialties. We reconcile accounts, fix miscategorizations, and restore your books. [Get started](/contact.html)' },
+      { keys: ['insurance'],
+        a: 'PBJ Strategic Accounting is a cash-pay firm. No insurance or third-party billing. Pricing is transparent and you always know what you\'re paying. [See pricing](/pricing.html)' },
+      { keys: ['cost', 'price', 'pricing', 'how much', 'package', 'plan'],
+        a: 'Pricing depends on your business size and needs. See the full breakdown on our [Pricing page](/pricing.html). A free consultation will help us point you in the right direction!' },
+      { keys: ['hidden fee', 'surprise', 'extra charge'],
+        a: 'Never! Pricing is upfront. You\'ll know exactly what\'s included before we begin any work. No surprises at billing. That\'s a promise.' },
+      { keys: ['solo', 'freelance', 'small', 'starter', 'crustless'],
+        a: 'The Crustless package covers the essentials without overcomplicating things. As your business grows, moving up is easy. [See all plans](/pricing.html)' },
+      { keys: ['in person', 'office', 'remote', 'virtual', 'come in'],
+        a: 'Not at all! We work both in-person and fully remotely. Most communication is by phone and email. Our Fleming Island office is available by appointment but completely optional.' },
+      { keys: ['software', 'quickbooks online', 'platform'],
+        a: 'We primarily use QuickBooks Online. It\'s cloud-based, secure, and great for collaboration. If you\'re on a different platform, let us know during your consultation.' },
+      { keys: ['how often', 'hear from', 'communication', 'updates', 'reports'],
+        a: 'At minimum, monthly financial reports and updates. Many clients prefer more frequent check-ins, and we\'re flexible and happy to work around your style.' },
+      { keys: ['cpa', 'tax preparer', 'alongside', 'work with my'],
+        a: 'Yes, and we actively encourage it! We handle day-to-day bookkeeping while your CPA focuses on tax strategy. Clean books often mean a lower bill from your CPA too.' },
+      { keys: ['where', 'located', 'address', 'location', 'directions'],
+        a: 'Our office is at 1845 Town Center Blvd. Suite #205, Fleming Island, FL 32003. Office visits are by appointment only. We also work remotely with clients across the country!' },
+      { keys: ['hours', 'open', 'available', 'when'],
+        a: 'Monday through Friday, 8:00 am to 5:00 pm. For anything urgent outside those hours, email info@pbjsa.com and we\'ll get back to you ASAP.' },
+      { keys: ['outside clay', 'other areas', 'out of state', 'nationwide', 'remote client'],
+        a: 'Yes! While our roots are in Clay County, we work with businesses throughout Northeast Florida and remotely across the country. Location is rarely a barrier.' },
+      { keys: ['phone', 'call', 'number'],
+        a: 'Give us a call at 904-708-2411 or reach out through our [Contact page](/contact.html). We\'d love to hear from you!' },
+      { keys: ['email', 'contact'],
+        a: 'You can email us at info@pbjsa.com or reach out through our [Contact page](/contact.html). We typically respond within one business day.' },
+      { keys: ['hello', 'hi', 'hey', 'good morning', 'good afternoon'],
+        a: 'Hi there! Welcome to PBJ Strategic Accounting. How can I help you today? Feel free to ask about our services, pricing, or anything else!' },
+      { keys: ['thank', 'thanks', 'appreciate'],
+        a: 'You\'re welcome! If you need anything else, don\'t hesitate to ask. You can also reach us at 904-708-2411 or [Contact us](/contact.html) anytime.' },
+    ];
+
+    var FALLBACK_DEFAULT = 'I\'m not sure about that one, but I\'d love to help! Give us a call at 904-708-2411 or visit our [Contact page](/contact.html) and we\'ll get you sorted out.';
+
+    function fallbackReply(text) {
+      var lower = text.toLowerCase();
+      for (var i = 0; i < FALLBACK_QA.length; i++) {
+        var qa = FALLBACK_QA[i];
+        for (var j = 0; j < qa.keys.length; j++) {
+          if (lower.indexOf(qa.keys[j]) !== -1) return qa.a;
+        }
+      }
+      return FALLBACK_DEFAULT;
+    }
+
+    var apiAvailable = (CHAT_API !== 'YOUR_CLOUDFLARE_WORKER_URL');
+    var apiFailed = false;
+
     /* ── Send message flow ─────────────────────────────────── */
     function sendMessage(text) {
       addMsg('user', text);
       history.push({ role: 'user', content: text });
 
-      /* Placeholder if worker not yet configured */
-      if (CHAT_API === 'YOUR_CLOUDFLARE_WORKER_URL') {
-        addMsg('bot', 'The chat is being set up. In the meantime, call us at 904-708-2411 or visit our [Contact page](/contact.html).');
+      /* Use fallback if API not configured or previously failed */
+      if (!apiAvailable || apiFailed) {
+        setTimeout(function () {
+          var reply = fallbackReply(text);
+          history.push({ role: 'assistant', content: reply });
+          addMsg('bot', reply);
+        }, 400);
         return;
       }
 
@@ -156,16 +226,23 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: history }),
       })
-        .then(function (r) { return r.json(); })
+        .then(function (r) {
+          if (!r.ok) throw new Error('API error ' + r.status);
+          return r.json();
+        })
         .then(function (data) {
           typingEl.remove();
-          var reply = data.reply || 'I had trouble with that. Please call 904-708-2411 or visit our [Contact page](/contact.html).';
+          var reply = data.reply;
+          if (!reply) throw new Error('Empty reply');
           history.push({ role: 'assistant', content: reply });
           addMsg('bot', reply);
         })
         .catch(function () {
           typingEl.remove();
-          addMsg('bot', 'Something went wrong. Please try again or call 904-708-2411.');
+          apiFailed = true;
+          var reply = fallbackReply(text);
+          history.push({ role: 'assistant', content: reply });
+          addMsg('bot', reply);
         })
         .finally(function () {
           setLoading(false);
