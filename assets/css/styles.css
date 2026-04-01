@@ -2050,9 +2050,9 @@ h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: 
   }
 
   /* Nav collapse */
-  .primary-nav,
-  .header-inner > .nav-cta { display: none; }
-  .hamburger { display: flex; }
+  .primary-nav { display: none; }
+  .header-inner > .nav-cta { font-size: .82rem; padding: .55rem 1rem; margin-left: auto; margin-right: .5rem; }
+  .hamburger { display: flex; margin-left: 0; }
 
   /* Hero */
   .hero { padding: 3rem 0 2rem; }
