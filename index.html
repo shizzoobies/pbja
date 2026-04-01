@@ -7,6 +7,7 @@
   <meta name="description" content="PB&amp;J Strategic Accounting specializes in bookkeeping and accounting for Clay County &amp; surrounding area small businesses - helping you simplify finances and grow with confidence.">
   <link rel="icon" type="image/png" href="assets/img/pbj-favicon.webp">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preload" href="assets/img/pbj-logo-full.webp" as="image" type="image/webp">
   <link rel="canonical" href="https://pbjsa.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pbjsa.com/">
@@ -87,7 +88,7 @@
     <div class="mobile-nav-panel">
       <div class="mobile-nav-header">
         <span class="brand" style="pointer-events:none;">
-          <img src="assets/img/pbj-logo-full.webp" alt="" class="site-logo" aria-hidden="true">
+          <img src="assets/img/pbj-logo-full.webp" alt="" class="site-logo" aria-hidden="true" loading="lazy">
         </span>
         <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" width="18" height="18">
@@ -172,7 +173,7 @@
 
           <article class="service-card" aria-labelledby="home-svc-bk">
             <div class="service-icon" aria-hidden="true">
-              <img src="assets/img/orbit-5.webp" alt="" class="service-icon-img">
+              <img src="assets/img/orbit-5.webp" alt="" class="service-icon-img" loading="lazy">
             </div>
             <h3 id="home-svc-bk">Bookkeeping</h3>
             <p>Accurate, tax-ready bookkeeping that keeps your finances, organized and stress-free. We handle reconciliations, reporting, and day-to-day details so you can focus on running your business.</p>
@@ -180,7 +181,7 @@
 
           <article class="service-card" aria-labelledby="home-svc-cfo">
             <div class="service-icon" aria-hidden="true">
-              <img src="assets/img/orbit-3.webp" alt="" class="service-icon-img">
+              <img src="assets/img/orbit-3.webp" alt="" class="service-icon-img" loading="lazy">
             </div>
             <h3 id="home-svc-cfo">Fractional CFO Services</h3>
             <p>Give you high-level financial expertise without the full-time cost. From cash flow and budgeting to growth planning, we provide the insights you need to make confident business decisions.</p>
@@ -188,7 +189,7 @@
 
           <article class="service-card" aria-labelledby="home-svc-qb">
             <div class="service-icon" aria-hidden="true">
-              <img src="assets/img/orbit-4.webp" alt="" class="service-icon-img">
+              <img src="assets/img/orbit-4.webp" alt="" class="service-icon-img" loading="lazy">
             </div>
             <h3 id="home-svc-qb">QuickBooks Clean-Up</h3>
             <p>Messy books? We specialize in bookkeeping clean-up, organizing past records, fixing errors, and getting your finances back on track so you can move forward with clarity and confidence.</p>
@@ -320,7 +321,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
   <script>
     (function () {
       var splash = document.getElementById('splash');
@@ -334,6 +335,6 @@
       });
     })();
   </script>
-  <script src="assets/js/chat.js"></script>
+  <script src="assets/js/chat.js" defer></script>
 </body>
 </html>
