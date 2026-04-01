@@ -2762,7 +2762,7 @@ body.splash-active { overflow: hidden; }
 .orbit-center-hint {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: rgba(139, 77, 47, .82);
+  background: rgba(181, 77, 122, .88);
   color: #fff;
   font-size: .7rem;
   font-weight: 700;
