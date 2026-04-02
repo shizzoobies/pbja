@@ -152,14 +152,9 @@
         </div>
       </div>
 
-      <!-- Right: brand intro video -->
+      <!-- Right: brand intro (image default, video enhancement) -->
       <div class="hero-panel-image">
-        <video autoplay muted playsinline preload="metadata"
-               class="hero-panel-photo"
-               aria-label="PB&amp;J Strategic Accounting intro video"
-               poster="assets/img/video-poster.webp">
-          <source src="assets/video/pbj-brand-video.mp4" type="video/mp4">
-        </video>
+        <img src="assets/img/video-poster.webp" alt="PB&amp;J Strategic Accounting" class="hero-panel-photo" id="heroPoster" width="1344" height="768">
       </div>
 
     </section>
@@ -326,11 +321,33 @@
   </footer>
 
   <script>
-  /* Pause hero video for reduced-motion preference */
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var v = document.querySelector('.hero-panel-photo');
-    if (v) { v.pause(); v.removeAttribute('autoplay'); }
-  }
+  /* Progressive video enhancement — show poster image by default, swap to video if it loads */
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var poster = document.getElementById('heroPoster');
+    if (!poster) return;
+    var video = document.createElement('video');
+    video.autoplay = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.loop = true;
+    video.preload = 'metadata';
+    video.className = 'hero-panel-photo';
+    video.setAttribute('aria-label', 'PB&J Strategic Accounting intro video');
+    var source = document.createElement('source');
+    source.src = 'assets/video/pbj-brand-video.mp4';
+    source.type = 'video/mp4';
+    video.appendChild(source);
+    var loaded = false;
+    var timeout = setTimeout(function () { if (!loaded) { video.src = ''; } }, 8000);
+    video.addEventListener('canplay', function () {
+      loaded = true;
+      clearTimeout(timeout);
+      poster.parentNode.replaceChild(video, poster);
+    }, { once: true });
+    video.addEventListener('error', function () { clearTimeout(timeout); }, { once: true });
+    video.load();
+  })();
   </script>
   <script src="assets/js/main.js" defer></script>
   <script>
