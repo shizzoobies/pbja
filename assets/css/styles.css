@@ -50,3 +50,12 @@
 .team-modal-social a{display:inline-flex;align-items:center;justify-content:center;padding:.4rem;color:#0A66C2;background:transparent;border:0;border-radius:0;transition:transform .2s,opacity .2s}
 .team-modal-social a:hover{transform:translateY(-1px);opacity:.85;background:transparent}
 body.modal-open{overflow:hidden}
+/* === Security section (team.html) === */
+.section--security{background:#E8F5FA}
+.security-icon{width:64px;height:64px;border-radius:50%;background:var(--surface);border:1px solid var(--surface-3);display:flex;align-items:center;justify-content:center;margin:0 auto .35rem;color:var(--accent-dark)}
+.security-icon svg{width:32px;height:32px}
+.security-copy{max-width:680px;margin:1.5rem auto 0;text-align:center;font-size:.97rem;line-height:1.65;color:var(--text-muted)}
+.team-row--security{margin-top:2.25rem;gap:3rem}
+.team-member--static{cursor:default}
+.team-member--static:hover{transform:none}
+.team-member--static:hover .team-avatar{box-shadow:0 12px 28px -16px rgba(28,25,23,.35);border-color:#fff}
