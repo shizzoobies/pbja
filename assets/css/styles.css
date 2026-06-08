@@ -77,3 +77,5 @@ body.has-hero-overlay .site-header:not(.is-scrolled) .nav-list a{color:#fff;text
 body.has-hero-overlay .site-header:not(.is-scrolled) .hamburger span{background-color:#fff}
 body.has-hero-overlay .site-header:not(.is-scrolled) .nav-cta{color:#fff;border-color:rgba(255,255,255,.75);background:transparent}
 body.has-hero-overlay .site-header:not(.is-scrolled) .nav-cta:hover{background:rgba(255,255,255,.15)}
+body.has-hero-overlay .site-header .site-logo{transition:filter .3s ease}
+body.has-hero-overlay .site-header:not(.is-scrolled) .site-logo{filter:brightness(0) invert(1)}
