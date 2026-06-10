@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preload" href="assets/img/hero/about-hero.jpg" as="image">
   <link rel="canonical" href="https://pbjsa.com/about">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pbjsa.com/about">
@@ -87,7 +88,7 @@
   }
   </script>
 </head>
-<body>
+<body class="has-hero-overlay">
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -146,12 +147,22 @@
   <!-- ── Main ────────────────────────────────────────────── -->
   <main id="main">
 
+    <!-- Hero -->
+    <section class="hero-full hero-full--deep" aria-labelledby="founder-heading">
+      <img src="assets/img/hero/about-hero.jpg" class="hero-full-img" alt="Brittany Ferguson, CPA, founder of PB&amp;J Strategic Accounting, at her desk" loading="eager" fetchpriority="high" width="1916" height="821">
+      <div class="hero-full-gradient" aria-hidden="true"></div>
+      <div class="hero-full-overlay">
+        <hr class="section-rule section-rule--pink" aria-hidden="true">
+        <h1 id="founder-heading">Hi, I'm Brittany Ferguson, CPA</h1>
+        <p class="lead">Founder of PB&amp;J Strategic Accounting, helping small businesses turn messy books into clear financial direction.</p>
+      </div>
+    </section>
+
     <!-- About Grid: Bio + Photo -->
-    <section class="section" aria-labelledby="founder-heading">
+    <section class="section" aria-label="Brittany's story">
       <div class="container about-grid">
         <div>
           <span class="eyebrow">Our Story</span>
-          <h1 id="founder-heading" style="font-size:1.75rem;">Hi, I'm Brittany Ferguson, CPA</h1>
           <p style="color:var(--text-muted); margin-top:1rem;">After 13 years working in the accounting world, I decided to venture out and take the knowledge I had gained over the years to truly help people and companies understand their sticky situations.</p>
           <p style="color:var(--text-muted);">I love taking those messy sandwiches and turning them into an enjoyable feast everyone has come to love. The name PB&amp;J comes from my three wonderful children - and yes I am as OCD as the name implies.</p>
           <ul class="cred-list" aria-label="Brittany's credentials and experience">

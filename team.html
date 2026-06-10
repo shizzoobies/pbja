@@ -127,10 +127,10 @@
   <main id="main">
 
     <!-- Hero: title + lead overlaid on full-width group photo -->
-    <section class="team-hero" aria-labelledby="team-heading">
-      <img src="assets/img/team/group.jpg" class="team-hero-img" alt="The PB&amp;J Strategic Accounting team — Allison Lehmann, Brittany Ferguson, CPA, and Lisa Mockabee" loading="eager" width="1916" height="821">
-      <div class="team-hero-gradient" aria-hidden="true"></div>
-      <div class="team-hero-overlay">
+    <section class="hero-full" aria-labelledby="team-heading">
+      <img src="assets/img/team/group.jpg" class="hero-full-img" alt="The PB&amp;J Strategic Accounting team — Allison Lehmann, Brittany Ferguson, CPA, and Lisa Mockabee" loading="eager" width="1916" height="821">
+      <div class="hero-full-gradient" aria-hidden="true"></div>
+      <div class="hero-full-overlay">
         <hr class="section-rule section-rule--pink" aria-hidden="true">
         <h1 id="team-heading">The People Behind Your Books</h1>
         <p class="lead">A family-run team of accountants, bookkeepers, and strategists committed to helping your business run cleaner, smarter, and more profitably.</p>
@@ -267,19 +267,6 @@
 
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/chat.js" defer></script>
-  <script>
-  (function(){
-    var header = document.querySelector('.site-header');
-    if (!header) return;
-    var threshold = 60;
-    function onScroll(){
-      if (window.scrollY > threshold) header.classList.add('is-scrolled');
-      else header.classList.remove('is-scrolled');
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  })();
-  </script>
   <script>
   (function () {
     var LI_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>';

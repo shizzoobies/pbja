@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preload" href="assets/img/hero/services-hero.jpg" as="image">
   <link rel="canonical" href="https://pbjsa.com/services">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pbjsa.com/services">
@@ -82,7 +83,7 @@
   }
   </script>
 </head>
-<body>
+<body class="has-hero-overlay">
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -137,13 +138,15 @@
   <!-- ── Main ────────────────────────────────────────────── -->
   <main id="main">
 
-    <!-- Page Hero -->
-    <section class="page-hero" aria-labelledby="services-heading">
-      <div class="container">
+    <!-- Hero -->
+    <section class="hero-full hero-full--short hero-full--center" aria-labelledby="services-heading">
+      <img src="assets/img/hero/services-hero.jpg" class="hero-full-img" alt="Brittany and Allison reviewing a client's books at PB&amp;J Strategic Accounting" loading="eager" fetchpriority="high" width="1916" height="821">
+      <div class="hero-full-gradient" aria-hidden="true"></div>
+      <div class="hero-full-overlay">
         <hr class="section-rule section-rule--pink" aria-hidden="true">
         <span class="eyebrow">What We Offer</span>
         <h1 id="services-heading">Our Accounting Services: From Bookkeeping to CFO</h1>
-        <p>Whatever stage your business is at, we have the right service to keep your finances organized, compliant, and working for your growth.</p>
+        <p class="lead">Whatever stage your business is at, we have the right service to keep your finances organized, compliant, and working for your growth.</p>
       </div>
     </section>
 

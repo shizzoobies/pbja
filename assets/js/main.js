@@ -45,3 +45,4 @@ card.addEventListener('click',open);card.addEventListener('keydown',function(e){
 +'<div class="quote-author">'+avatarHtml(r)
 +'<div><p class="quote-author-name">'+r.author_name+'</p></div>'
 +'</div></div>';}).join('');seeAllLink.addEventListener('click',function(e){e.preventDefault();allBackdrop.hidden=false;document.body.style.overflow='hidden';allClose.focus();});}}).catch(function(){ticker.innerHTML='<p class="reviews-loading">Unable to load reviews right now.</p>';});})();
+(function(){if(!document.body.classList.contains('has-hero-overlay'))return;var h=document.querySelector('.site-header');if(!h)return;function s(){h.classList.toggle('is-scrolled',window.scrollY>60);}window.addEventListener('scroll',s,{passive:true});s();})();
