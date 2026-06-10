@@ -15,6 +15,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="preload" href="assets/img/pbj-logo-full.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/img/hero/home-poster.jpg" as="image">
   <link rel="canonical" href="https://pbjsa.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pbjsa.com/">
@@ -91,7 +92,7 @@
   }
   </script>
 </head>
-<body>
+<body class="has-hero-overlay">
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -158,46 +159,37 @@
   <!-- ── Main ────────────────────────────────────────────── -->
   <main id="main">
 
-    <!-- ══ Cinematic Split Hero ════════════════════════════ -->
-    <section class="hero-split" aria-labelledby="hero-heading">
-
-      <!-- Dark left panel -->
-      <div class="hero-panel-dark">
-        <div class="hero-panel-content">
-          <span class="eyebrow eyebrow--light" style="color:#1C1917;">Professional Accounting</span>
-          <h1 id="hero-heading" class="on-dark" style="margin-top:.85rem; font-size:clamp(2.6rem,4.5vw,4.25rem);">
-            Strategic Accounting &amp; Bookkeeping for Growing Businesses
-          </h1>
-          <p class="lead lead--light">
-            At PB&amp;J Strategic Accounting, we specialize in bookkeeping services to help small businesses simplify their finances and grow with confidence.
-          </p>
-          <div class="btn-row">
-            <a class="btn btn--inverse" href="/pricing">View Pricing Plans</a>
-            <a class="btn btn-ghost" href="/contact">Book a Free Call</a>
+    <!-- ══ Full-Width Video Hero ══════════════════════════ -->
+    <section class="hero-full" aria-labelledby="hero-heading">
+      <img src="assets/img/hero/home-poster.jpg" class="hero-full-img" alt="" aria-hidden="true" loading="eager" fetchpriority="high" width="1916" height="1077">
+      <video class="hero-full-img" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero/home-poster.jpg" aria-label="A mom reviews her business finances while her kids make peanut butter and jelly sandwiches">
+        <source src="assets/video/home-hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-full-gradient" aria-hidden="true"></div>
+      <div class="hero-full-overlay">
+        <hr class="section-rule section-rule--pink" aria-hidden="true">
+        <span class="eyebrow">Professional Accounting</span>
+        <h1 id="hero-heading">Strategic Accounting &amp; Bookkeeping for Growing Businesses</h1>
+        <p class="lead">At PB&amp;J Strategic Accounting, we specialize in bookkeeping services to help small businesses simplify their finances and grow with confidence.</p>
+        <div class="btn-row">
+          <a class="btn" href="/pricing">View Pricing Plans</a>
+          <a class="btn btn-ghost" href="/contact">Book a Free Call</a>
+        </div>
+        <div class="hero-stats" aria-label="Quick facts">
+          <div>
+            <span class="hero-stat-val">13+</span>
+            <span class="hero-stat-lbl">Years Experience</span>
           </div>
-          <!-- Inline trust stats -->
-          <div class="hero-stats" aria-label="Quick facts">
-            <div>
-              <span class="hero-stat-val">13+</span>
-              <span class="hero-stat-lbl">Years Experience</span>
-            </div>
-            <div>
-              <span class="hero-stat-val">7</span>
-              <span class="hero-stat-lbl">Services Offered</span>
-            </div>
-            <div>
-              <span class="hero-stat-val">5★</span>
-              <span class="hero-stat-lbl">Client Rating</span>
-            </div>
+          <div>
+            <span class="hero-stat-val">7</span>
+            <span class="hero-stat-lbl">Services Offered</span>
+          </div>
+          <div>
+            <span class="hero-stat-val">5&#9733;</span>
+            <span class="hero-stat-lbl">Client Rating</span>
           </div>
         </div>
       </div>
-
-      <!-- Right: brand intro (image default, video enhancement) -->
-      <div class="hero-panel-image">
-        <img src="assets/img/video-poster.webp" alt="PB&amp;J Strategic Accounting" class="hero-panel-photo" id="heroPoster" width="1344" height="768">
-      </div>
-
     </section>
 
     <!-- ══ What We Do ══════════════════════════════════════ -->
@@ -363,35 +355,6 @@
     </div>
   </footer>
 
-  <script>
-  /* Progressive video enhancement — show poster image by default, swap to video if it loads */
-  (function () {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var poster = document.getElementById('heroPoster');
-    if (!poster) return;
-    var video = document.createElement('video');
-    video.autoplay = true;
-    video.muted = true;
-    video.playsInline = true;
-    video.loop = true;
-    video.preload = 'metadata';
-    video.className = 'hero-panel-photo';
-    video.setAttribute('aria-label', 'PB&J Strategic Accounting intro video');
-    var source = document.createElement('source');
-    source.src = 'assets/video/pbj-brand-video.mp4';
-    source.type = 'video/mp4';
-    video.appendChild(source);
-    var loaded = false;
-    var timeout = setTimeout(function () { if (!loaded) { video.src = ''; } }, 8000);
-    video.addEventListener('canplay', function () {
-      loaded = true;
-      clearTimeout(timeout);
-      poster.parentNode.replaceChild(video, poster);
-    }, { once: true });
-    video.addEventListener('error', function () { clearTimeout(timeout); }, { once: true });
-    video.load();
-  })();
-  </script>
   <script src="assets/js/main.js" defer></script>
   <script>
     (function () {

@@ -121,3 +121,11 @@ body.has-hero-overlay .site-header:not(.is-scrolled) .site-logo{filter:brightnes
 .why-card--b .why-rule{background:var(--gold)}
 .why-card--j .why-rule{background:#0E7490}
 .why-card p{position:relative;margin:0;color:var(--text-muted);font-size:.96rem;line-height:1.62}
+/* === Video hero === */
+.hero-full video.hero-full-img{object-position:center}
+.hero-full .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.65)}
+.hero-full .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;color:#fff}
+.hero-full-overlay .hero-stats{margin-top:2rem}
+.hero-full-overlay .hero-stat-val{color:#fff}
+.hero-full-overlay .hero-stat-lbl{color:rgba(255,255,255,.78)}
+@media (prefers-reduced-motion:reduce){.hero-full video{display:none}}
