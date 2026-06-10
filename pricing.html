@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preload" href="assets/img/hero/pricing-hero.jpg" as="image">
   <link rel="canonical" href="https://pbjsa.com/pricing">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pbjsa.com/pricing">
@@ -144,7 +145,7 @@
   }
   </script>
 </head>
-<body>
+<body class="has-hero-overlay">
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -200,12 +201,14 @@
   <main id="main">
 
     <!-- Page Hero -->
-    <section class="page-hero" aria-labelledby="pricing-heading">
-      <div class="container">
+    <section class="hero-full hero-full--short hero-full--center" aria-labelledby="pricing-heading">
+      <img src="assets/img/hero/pricing-hero.jpg" class="hero-full-img" alt="Allison, Brittany, and Lisa of PB&amp;J Strategic Accounting talking together" loading="eager" fetchpriority="high" width="1916" height="639">
+      <div class="hero-full-gradient" aria-hidden="true"></div>
+      <div class="hero-full-overlay">
         <hr class="section-rule section-rule--pink" aria-hidden="true">
         <span class="eyebrow">Transparent Pricing</span>
         <h1 id="pricing-heading">Bookkeeping Pricing: 7 Flexible Packages</h1>
-        <p>PB&amp;J Strategic Accounting provides transparent bookkeeping pricing so you know exactly what to expect.</p>
+        <p class="lead">PB&amp;J Strategic Accounting provides transparent bookkeeping pricing so you know exactly what to expect.</p>
       </div>
     </section>
 

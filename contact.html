@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preload" href="assets/img/hero/contact-hero.jpg" as="image">
   <link rel="canonical" href="https://pbjsa.com/contact">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pbjsa.com/contact">
@@ -69,7 +70,7 @@
   }
   </script>
 </head>
-<body>
+<body class="has-hero-overlay">
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -125,12 +126,14 @@
   <main id="main">
 
     <!-- Page Hero -->
-    <section class="page-hero" aria-labelledby="contact-heading">
-      <div class="container">
+    <section class="hero-full hero-full--short hero-full--center" aria-labelledby="contact-heading">
+      <img src="assets/img/hero/contact-hero.jpg" class="hero-full-img" alt="Brittany Ferguson, CPA answering a client call at PB&amp;J Strategic Accounting" loading="eager" fetchpriority="high" width="1916" height="639">
+      <div class="hero-full-gradient" aria-hidden="true"></div>
+      <div class="hero-full-overlay">
         <hr class="section-rule section-rule--pink" aria-hidden="true">
         <span class="eyebrow">Get in Touch</span>
         <h1 id="contact-heading">Contact PB&amp;J Strategic Accounting in Fleming Island, FL</h1>
-        <p>Whether you have a question about our services, want to get a custom quote, or are ready to book a free consultation - we're here to help.</p>
+        <p class="lead">Whether you have a question about our services, want to get a custom quote, or are ready to book a free consultation - we're here to help.</p>
       </div>
     </section>
 
