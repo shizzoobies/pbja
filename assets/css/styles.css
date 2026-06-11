@@ -73,7 +73,7 @@ body.modal-open{overflow:hidden}
 
 /* === hero-full variants === */
 .hero-full--short{aspect-ratio:3/1;max-height:52vh;min-height:300px}
-.hero-full--center .hero-full-gradient{background:rgba(0,0,0,.52)}
+.hero-full--center .hero-full-gradient{background:rgba(0,0,0,.62)}
 .hero-full--center .hero-full-overlay{width:100%;max-width:none;align-items:center;text-align:center;padding:clamp(1.5rem,4vw,3rem)}
 .hero-full--center .hero-full-overlay .section-rule{margin-left:auto;margin-right:auto}
 .hero-full--center .hero-full-overlay h1{font-size:clamp(1.9rem,3.6vw,2.9rem)}
