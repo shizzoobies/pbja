@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/pbj-buttons.css">
+  <link rel="stylesheet" href="/assets/css/pbj-footer.css">
+  <link rel="stylesheet" href="assets/css/pbj-details.css">
   <!-- Without JS nothing ever adds .is-scrolled, so the transparent hero header
        would keep its white nav over light page content. Force the solid state. -->
   <noscript>
@@ -260,43 +263,150 @@
       </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="section section--tinted" aria-labelledby="how-heading">
+    <section class="pbj-cleanup" aria-labelledby="cleanup-heading">
       <div class="container">
-        <div class="section-header section-header--center">
-          <span class="eyebrow">Our Process</span>
-          <h2 id="how-heading">Simple, Stress-Free Onboarding</h2>
-          <p class="lead">Getting started with PB&amp;J Strategic Accounting takes just three easy steps.</p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card" style="text-align:center;">
-            <span class="step-num-outline" aria-hidden="true">01</span>
-            <h3>Book a Free Call</h3>
-            <p>Schedule a consultation so we can learn about your business, your goals, and what kind of support you need.</p>
+        <div class="pbj-cleanup-inner">
+          <span class="pbj-cameo" aria-hidden="true" data-pbj-motion="wave" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 250" aria-hidden="true" focusable="false" width="240" height="250"><g stroke="#482447" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <g id="services-legs" fill="none">
+      <g id="services-leg-left"><path d="M91 188 Q83 207 88 219"/><path d="M89 214 C81 208 67 214 67 222 C67 230 91 233 96 225 Q100 220 89 214Z" fill="#fff5dc"/></g>
+      <g id="services-leg-right"><path d="M149 188 Q159 205 151 219"/><path d="M151 215 C162 209 176 216 175 224 C172 232 149 231 145 225 Q143 220 151 215Z" fill="#fff5dc"/></g>
+    </g>
+    <g id="services-arm-left"><path d="M63 120 Q36 121 35 145" fill="none"/><path d="M36 140 C25 132 22 141 25 147 C13 149 17 163 28 164 C41 170 49 153 43 146 L40 145" fill="#fff5dc"/></g>
+    <g id="services-arm-right" data-pbj-arm><path d="M177 119 Q203 124 207 96" fill="none"/><path d="M205 101 C193 99 188 87 195 85 L200 88 C188 72 197 69 205 82 C200 65 211 67 213 82 C217 70 226 76 220 91 Q219 101 205 101Z" fill="#fff5dc"/></g>
+    <g id="services-jar-body">
+      <path d="M76 54 L164 54 L164 65 Q183 72 184 96 L184 169 Q184 195 158 196 L82 196 Q56 195 56 169 L56 96 Q57 73 76 65Z" fill="#eed9f1"/>
+      <path d="M65 92 Q80 81 98 91 T131 92 T174 90 L175 168 Q175 185 158 186 L82 186 Q65 185 65 168Z" fill="#a863b6" stroke="none"/>
+      <path d="M67 169 Q102 182 174 162 L174 170 Q174 185 157 185 L82 185 Q68 184 67 169" fill="#8a429c" stroke="none"/>
+      <path d="M66 101 L66 117 M67 82 L70 77" stroke="#fff9ff" stroke-width="6" fill="none"/>
+      <path d="M84 105 Q120 98 156 105 Q167 108 167 119 L167 157 Q166 171 152 173 Q119 178 85 172 Q73 170 73 157 L73 120 Q73 108 84 105Z" fill="#fff6df" stroke-width="3.5"/>
+      <g id="services-face">
+        <g id="services-eyes" fill="#482447" stroke="none"><ellipse cx="101" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="139" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="101" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="139" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="101.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><ellipse cx="139.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><circle cx="99" cy="129" r="2.1" fill="#fff"/><circle cx="137" cy="129" r="2.1" fill="#fff"/></g>
+        <g fill="#f29fb3" stroke="none"><ellipse cx="88" cy="143" rx="8" ry="4.5"/><ellipse cx="152" cy="143" rx="8" ry="4.5"/></g>
+        <path d="M108 145 Q120 159 132 145" fill="none" stroke-width="3.5"/>
+        <path d="M115 162 Q109 156 113 154 Q117 152 120 156 Q124 151 128 155 Q132 160 120 166Z" fill="#f1439d" stroke="none"/>
+      </g>
+      <path d="M80 62 H160" fill="none" stroke="#c58ecd" stroke-width="3"/>
+    </g>
+    <g id="services-lid">
+      <rect x="62" y="35" width="116" height="27" rx="9" fill="#f1439d"/>
+      <path d="M73 40 Q120 34 166 40" stroke="#ffb4d8" stroke-width="3" fill="none"/>
+      <path d="M77 49 V56 M92 48 V56 M107 48 V56 M122 48 V56 M137 48 V56 M152 48 V56 M165 49 V56" stroke="#a62c73" stroke-width="3"/>
+      <path d="M72 33 Q75 26 85 29" stroke="#482447" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+</svg></span>
+          <div>
+            <p class="pbj-note">Let's untangle this.</p>
+            <h2 id="cleanup-heading">In a bit of a <span class="pbj-underline">jam?</span></h2>
+            <p>Behind on your books? Our QuickBooks clean-up service helps you sort out past records and get back on track.</p>
           </div>
-          <div class="service-card" style="text-align:center;">
-            <span class="step-num-outline" aria-hidden="true">02</span>
-            <h3>Agree on a Plan</h3>
-            <p>We'll work with you to build a customized package that fits your needs perfectly, tailored to your business size, goals, and budget.</p>
-          </div>
-          <div class="service-card" style="text-align:center;">
-            <span class="step-num-outline" aria-hidden="true">03</span>
-            <h3>We Handle the Rest</h3>
-            <p>Hand us your books and breathe easy. We keep everything organized, accurate, and current, so you can focus on growing your business.</p>
-          </div>
+          <a class="btn-secondary" href="/contact">Talk About Clean-Up</a>
         </div>
       </div>
     </section>
 
-    <!-- CTA Strip -->
-    <section class="cta-strip" aria-labelledby="services-cta-heading">
+    <!-- Getting started -->
+    <section class="section section--tinted pbj-start" aria-labelledby="how-heading">
       <div class="container">
-        <span class="eyebrow" style="color:#0E7490;">Not Sure Where to Start?</span>
+        <div class="pbj-start-heading">
+          <div>
+            <span class="eyebrow">Getting Started</span>
+            <h2 id="how-heading">Good support starts<br>with a conversation.</h2>
+            <p class="lead">No need to have everything figured out before we talk.</p>
+          </div>
+          <p class="pbj-note">A little less<br>on your plate.</p>
+        </div>
+        <ol class="pbj-start-steps" role="list">
+          <li>
+            <svg class="pbj-start-art" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true" focusable="false">
+              <path d="M13 53C4 18 39 5 73 13s51 34 33 58S24 94 13 53Z" fill="#fceef5"/>
+              <g stroke="#482447" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M52 39h40q10 0 10 11v18q0 10-10 10h-5l-11 10 1-10H60q-10 0-10-10Z" fill="#9fe2f0"/>
+                <path d="M25 22h44q11 0 11 11v21q0 11-11 11H46L31 78l2-13h-8q-10 0-10-11V33q0-11 10-11Z" fill="#fff6df"/>
+                <path d="M30 38h35M30 48h23" fill="none"/>
+                <path d="m91 17 3-7m7 13 8-1" stroke="#ff43a4"/>
+              </g>
+            </svg>
+            <h3>Let's talk it through.</h3>
+            <p>Start with a free call. Tell us about your business, your goals, and where you could use a hand.</p>
+          </li>
+          <li>
+            <svg class="pbj-start-art" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true" focusable="false">
+              <path d="M17 25C37 4 81 10 104 33s0 60-35 61S-3 62 17 25Z" fill="#fff6df"/>
+              <g stroke="#482447" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="rotate(6 60 50)">
+                <rect x="29" y="16" width="61" height="73" rx="8" fill="#fff"/>
+                <rect x="43" y="10" width="32" height="15" rx="5" fill="#f6b5d5"/>
+                <path d="m39 40 4 4 7-9m-11 22 4 4 7-9m-11 22 4 4 7-9" fill="none" stroke="#17708b"/>
+                <path d="M59 40h19M59 57h16M59 74h20" fill="none"/>
+              </g>
+              <path d="m100 66 4 8 9 1-7 6 1 9-8-5-8 4 2-9-6-6 9-1Z" fill="#ff43a4"/>
+            </svg>
+            <h3>Find the right fit.</h3>
+            <p>Together, we'll choose the support that makes sense for your business, your goals, and your budget.</p>
+          </li>
+          <li>
+            <svg class="pbj-start-art" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true" focusable="false">
+              <path d="M18 34C26 5 81 5 101 32s7 54-24 60S7 70 18 34Z" fill="#fceef5"/>
+              <g stroke="#482447" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M81 43h11q15 0 15 12T85 68" fill="#fff6df"/>
+                <path d="M28 41h59l-5 29q-3 13-24 13T34 70Z" fill="#fff6df"/>
+                <path d="M21 85q37 12 75 0" fill="none"/>
+                <path d="M46 31q-8-6 0-13M63 30q-8-7 0-16" fill="none" stroke="#17708b"/>
+                <path d="M51 56q-5-8-10-3t13 18q20-14 12-19t-12 5Z" fill="#ff43a4" stroke="none"/>
+              </g>
+              <path d="m96 15 2 8 8 2-8 2-2 8-2-8-8-2 8-2Z" fill="#48c2e0"/>
+            </svg>
+            <h3>Leave the books with us.</h3>
+            <p>We keep your books organized, accurate, and current, so you have more time for your business.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="cta-strip pbj-signoff" aria-labelledby="services-cta-heading">
+      <div class="container">
+        <div class="pbj-signoff-panel">
+          <span class="pbj-cameo" aria-hidden="true" data-pbj-motion="wave" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 250" aria-hidden="true" focusable="false" width="240" height="250"><g stroke="#482447" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <g id="services-signoff-legs" fill="none">
+      <g id="services-signoff-leg-left"><path d="M91 188 Q83 207 88 219"/><path d="M89 214 C81 208 67 214 67 222 C67 230 91 233 96 225 Q100 220 89 214Z" fill="#fff5dc"/></g>
+      <g id="services-signoff-leg-right"><path d="M149 188 Q159 205 151 219"/><path d="M151 215 C162 209 176 216 175 224 C172 232 149 231 145 225 Q143 220 151 215Z" fill="#fff5dc"/></g>
+    </g>
+    <g id="services-signoff-arm-left"><path d="M63 120 Q36 121 35 145" fill="none"/><path d="M36 140 C25 132 22 141 25 147 C13 149 17 163 28 164 C41 170 49 153 43 146 L40 145" fill="#fff5dc"/></g>
+    <g id="services-signoff-arm-right" data-pbj-arm><path d="M177 119 Q203 124 207 96" fill="none"/><path d="M205 101 C193 99 188 87 195 85 L200 88 C188 72 197 69 205 82 C200 65 211 67 213 82 C217 70 226 76 220 91 Q219 101 205 101Z" fill="#fff5dc"/></g>
+    <g id="services-signoff-jar-body">
+      <path d="M76 54 L164 54 L164 65 Q183 72 184 96 L184 169 Q184 195 158 196 L82 196 Q56 195 56 169 L56 96 Q57 73 76 65Z" fill="#eed9f1"/>
+      <path d="M65 92 Q80 81 98 91 T131 92 T174 90 L175 168 Q175 185 158 186 L82 186 Q65 185 65 168Z" fill="#a863b6" stroke="none"/>
+      <path d="M67 169 Q102 182 174 162 L174 170 Q174 185 157 185 L82 185 Q68 184 67 169" fill="#8a429c" stroke="none"/>
+      <path d="M66 101 L66 117 M67 82 L70 77" stroke="#fff9ff" stroke-width="6" fill="none"/>
+      <path d="M84 105 Q120 98 156 105 Q167 108 167 119 L167 157 Q166 171 152 173 Q119 178 85 172 Q73 170 73 157 L73 120 Q73 108 84 105Z" fill="#fff6df" stroke-width="3.5"/>
+      <g id="services-signoff-face">
+        <g id="services-signoff-eyes" fill="#482447" stroke="none"><ellipse cx="101" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="139" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="101" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="139" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="101.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><ellipse cx="139.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><circle cx="99" cy="129" r="2.1" fill="#fff"/><circle cx="137" cy="129" r="2.1" fill="#fff"/></g>
+        <g fill="#f29fb3" stroke="none"><ellipse cx="88" cy="143" rx="8" ry="4.5"/><ellipse cx="152" cy="143" rx="8" ry="4.5"/></g>
+        <path d="M108 145 Q120 159 132 145" fill="none" stroke-width="3.5"/>
+        <path d="M115 162 Q109 156 113 154 Q117 152 120 156 Q124 151 128 155 Q132 160 120 166Z" fill="#f1439d" stroke="none"/>
+      </g>
+      <path d="M80 62 H160" fill="none" stroke="#c58ecd" stroke-width="3"/>
+    </g>
+    <g id="services-signoff-lid">
+      <rect x="62" y="35" width="116" height="27" rx="9" fill="#f1439d"/>
+      <path d="M73 40 Q120 34 166 40" stroke="#ffb4d8" stroke-width="3" fill="none"/>
+      <path d="M77 49 V56 M92 48 V56 M107 48 V56 M122 48 V56 M137 48 V56 M152 48 V56 M165 49 V56" stroke="#a62c73" stroke-width="3"/>
+      <path d="M72 33 Q75 26 85 29" stroke="#482447" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+</svg></span>
+
+          <div class="pbj-signoff-copy">
+        <span class="eyebrow"><span class="pbj-dollop" aria-hidden="true"></span>Not Sure Where to Start?</span>
         <h2 id="services-cta-heading">Let's Find the Right Service for You</h2>
         <p>Every business is different. Book a free call and we'll tailor a solution that fits your needs and your budget.</p>
-        <div class="btn-row" style="justify-content:center;">
+        <div class="btn-row">
           <a class="btn" href="/contact">Get a Price</a>
           <a class="btn-secondary" href="/pricing">View Pricing Plans</a>
+        </div>
+          </div>
+          <p class="pbj-note">Your next chapter<br>starts here.</p>
         </div>
       </div>
     </section>
@@ -349,6 +459,9 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="/assets/js/pbj-buttons.js" defer></script>
+  <script src="/assets/js/pbj-eyes.js" defer></script>
+  <script src="assets/js/pbj-details.js" defer></script>
   <script>
   (function () {
     var scene = document.getElementById('orbitScene');

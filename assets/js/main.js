@@ -78,7 +78,7 @@ if(seeAllLink){var allList=document.getElementById('all-reviews-list');allList.i
 +'<div class="quote-author">'+avatarHtml(r)
 +'<div><p class="quote-author-name">'+esc(r.author_name)+'</p></div>'
 +'</div></div>';}).join('');seeAllLink.addEventListener('click',function(e){e.preventDefault();allOpener=seeAllLink;allBackdrop.hidden=false;document.body.style.overflow='hidden';allClose.focus();});}}).catch(function(){var secE=ticker.closest('.section');if(secE)secE.style.display='none';});})();
-(function(){if(!document.body.classList.contains('has-hero-overlay'))return;var h=document.querySelector('.site-header');if(!h)return;function s(){h.classList.toggle('is-scrolled',window.scrollY>60);}window.addEventListener('scroll',s,{passive:true});s();})();
+(function(){var h=document.querySelector('.site-header');if(!h)return;function s(){h.classList.toggle('is-scrolled',window.scrollY>60);}window.addEventListener('scroll',s,{passive:true});s();})();
 (function(){'use strict';var btn=document.getElementById('hero-video-toggle');if(!btn)return;var video=document.querySelector('.hero-full video');if(!video){btn.hidden=true;return;}
 function sync(){btn.setAttribute('aria-pressed',video.paused?'true':'false');btn.setAttribute('aria-label','Pause background video');}
 btn.addEventListener('click',function(){if(video.paused){var p=video.play();if(p&&p.catch)p.catch(function(){});}else{video.pause();}sync();});video.addEventListener('play',sync);video.addEventListener('pause',sync);sync();})();

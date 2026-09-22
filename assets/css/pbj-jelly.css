@@ -1,33 +1,7 @@
-/* ─────────────────────────────────────────────────────────────────────────
-   PB&J bread cards + jelly mascot — pricing page only.
-   Adapted from the PBJ-Jelly-Handoff reference (revision 3).
-   Loaded AFTER assets/css/styles.css, on pricing.html only.
-
-   Everything here is gated behind classes that only JavaScript adds
-   (.pbj-jelly-pending from the inline reservation script, .pbj-jelly-root and
-   .pbj-bread-card from the module), so with JavaScript off this file changes
-   nothing at all.
-
-   Site adaptations vs. the handoff reference:
-   - No `color:#482447` on the card. The site's own token colours are kept
-     so the measured WCAG AA contrast pass is not disturbed.
-   - Lid pink comes from the inlined SVG (site --pink #ff43a4, not #f1439d).
-   - Horizontal padding is `max(24px, 8%)` rather than
-     `clamp(24px, 8%, 32px)`: the 32px cap put text on the crust once a card
-     grows past ~420px.
-   - Bread cards are capped at 480px and centred while the grids are a single
-     column. A full-width 713px card flattens the dome into a tray; 480px is
-     the widest the silhouette still reads as a slice, and it matches the card
-     width the two-column breakpoint already produces. The grid's own columns
-     and breakpoints are untouched.
-   - Row spacing is taken over from the grid gap so the 112px character
-     clearance is not added on top of the existing 1.25rem row gap.
-   - The character's horizontal anchor is
-     `clamp(70%, calc(100% - 86px), calc(100% - 60px))` rather than
-     `min(77%, …)`. The two agree exactly on the 373px desktop card the
-     reference was tuned for, but the flat 77% drifts inward on wider cards,
-     where it no longer reads as the upper-RIGHT corner.
-   ───────────────────────────────────────────────────────────────────────── */
+/* Pricing bread cards and the original jelly interaction.
+   Enhancement classes preserve the ordinary cards when JavaScript is unavailable.
+   The SVG crown and crust scale with width; straight sides accommodate the copy.
+   The detailed plans use wider slices, and specialty slices keep a width cap. */
 
 /* ── Pre-paint reservation ──────────────────────────────────────────────
    The inline script at the top of .plans-section adds .pbj-jelly-pending
@@ -52,6 +26,26 @@
    (not added to) so rows are not double-spaced. Column gap is untouched. */
 .pbj-jelly-root .pricing-grid { row-gap: 40px; }
 .pbj-jelly-root .pricing-specialty { row-gap: 40px; margin-top: 0; }
+
+/* Give the detailed plans a wider slice and keep specialty slices balanced. */
+@media (min-width: 1140px) {
+  .pbj-jelly-pending .pricing-grid,
+  .pbj-jelly-root .pricing-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .pbj-jelly-pending .pricing-grid > .price-card,
+  .pbj-jelly-root .pricing-grid > .price-card { grid-column: span 2; }
+  .pbj-jelly-pending .pricing-grid > .price-card:nth-child(n+4),
+  .pbj-jelly-root .pricing-grid > .price-card:nth-child(n+4) { grid-column: span 3; width: min(100%, 520px); justify-self: center; }
+  .pbj-jelly-root .pricing-grid > .price-card:nth-child(n+4) .pbj-card-surface > ul { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-content: start; }
+}
+@media (min-width: 769px) and (max-width: 1139px) {
+  .pbj-jelly-pending .pricing-grid,
+  .pbj-jelly-root .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+}
+@media (min-width: 600px) and (max-width: 768px) {
+  .pbj-jelly-root .pricing-grid > .price-card:nth-child(n+4) .pbj-card-surface > ul { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-content: start; }
+}
+.pbj-jelly-pending .pricing-specialty > .price-card,
+.pbj-jelly-root .pricing-specialty > .price-card { width: min(100%, 480px); justify-self: center; }
 
 /* Single-column band: keep the slice from flattening into a tray. */
 @media (max-width: 768px) {
@@ -109,8 +103,9 @@
   flex-direction: column;
   box-sizing: border-box;
   min-width: 0;
-  padding: var(--pbj-card-padding-top, 72px)
-           var(--pbj-card-padding-x, max(24px, 8%))
+  aspect-ratio: 1 / 1.08;
+  padding: max(var(--pbj-card-padding-top, 76px), calc(var(--pbj-crown-y, 24px) + 3.5rem))
+           var(--pbj-card-padding-x, max(30px, 12%))
            var(--pbj-card-padding-bottom, 44px);
   transform-origin: 50% 96%;
   transition: none; /* enabled one frame after init so nothing animates on load */
@@ -122,7 +117,19 @@
 /* Centre the card "header" (badge, title, tagline, price) on the bread;
    feature lists, group labels and notes keep normal left alignment. */
 .pbj-card-surface { text-align: center; }
-.pbj-card-surface > .price-badge { align-self: center; }
+.pbj-card-surface > .price-badge { position: absolute; top: calc(var(--pbj-crown-y, 24px) + 8px); left: 42%; transform: translateX(-50%); white-space: nowrap; margin: 0; }
+.pbj-card-surface > h3 { font-size: 1.3rem; line-height: 1.2; margin: 0 0 .6rem; }
+.pbj-card-surface > .price-tagline { min-height: 3.2em; line-height: 1.6; margin: 0; }
+.pbj-card-surface > .price-amount { font-size: 2rem; line-height: 1.15; margin: .85rem 0 1.4rem; }
+.pbj-card-surface .price-prefix { display: block; font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: .35rem; }
+.pbj-card-surface > ul { gap: .55rem; }
+.price-card .pbj-card-surface > ul > li { display: block; position: relative; padding-left: 22px; margin-top: 0; align-self: start; }
+.price-card .pbj-card-surface > ul > li::before { position: absolute; left: 0; top: 0; }
+.pbj-card-surface > ul > li > ul { padding-top: .4rem; }
+.pbj-card-surface > .price-note { border-top: 1px solid #d9bf93; padding-top: .85rem; margin-bottom: 1rem; }
+.price-card .pbj-card-surface > .btn, .price-card .pbj-card-surface > .btn-secondary { width: calc(100% - 12px); align-self: center; padding-inline: .8rem; }
+.price-card .pbj-card-surface ul li.feature-label { font-weight: 600; }
+.price-card .pbj-card-surface ul li.feature-sub { padding-left: .2rem; }
 .pbj-card-surface > ul,
 .pbj-card-surface > .feature-group-label,
 .pbj-card-surface > .price-note { text-align: left; }
@@ -152,7 +159,7 @@
    The top percentage tracks the crust crown as long copy makes cards taller. */
 .pbj-jelly-perch {
   position: absolute;
-  top: calc(2.6% - 108px);
+  top: calc(var(--pbj-crown-y, 24px) - 108px);
   left: clamp(70%, calc(100% - 86px), calc(100% - 60px));
   width: 132px;
   height: 137.5px;
@@ -187,7 +194,7 @@
 
 .pbj-jelly-shadow {
   position: absolute;
-  top: 2.6%;
+  top: var(--pbj-crown-y, 24px);
   left: clamp(70%, calc(100% - 86px), calc(100% - 60px));
   width: 55px;
   height: 9px;

@@ -10,9 +10,7 @@
  *   - A `pbj-jelly-root` class is put on the root and `pbj-jelly-ready` is
  *     added one frame later, so the resting tilt is painted without a
  *     transition on first load (the brief forbids any intro motion).
- *   - The ResizeObserver also sizes the top/bottom padding, because the bread
- *     crown stretches with card height (preserveAspectRatio="none"); values
- *     are quantised to 4px so the observer settles instead of oscillating.
+ *   - The ResizeObserver draws width-scaled crust and crown geometry, extends the straight sides for content, and reserves matching padding.
  *   - The resting tilt is budgeted against the page gutter beside each card
  *     rather than a flat fraction of its width, so ordinary cards rest at the
  *     brief's full 2.2 degrees and only tall or edge-hugging ones are reduced.
@@ -140,7 +138,7 @@ export function initPbjJelly({
     surface.prepend(bread, shadow, perch);
     card.append(surface);
 
-    surfaces.push({ card, surface });
+    surfaces.push({ card, surface, bread });
     inserted.push(bread, shadow, perch);
     card.classList.add('pbj-bread-card');
 
@@ -154,18 +152,15 @@ export function initPbjJelly({
     }, { signal, passive: true });
   });
 
-  /* Long copy makes narrow cards very tall. Two consequences are corrected
-     here: the resting tilt has to shrink so the card's corners do not swing
-     sideways, and the stretched bread crown/heel need proportional padding
-     so text never lands on the crust. Both are quantised so the
-     ResizeObserver converges instead of looping. */
+  // Size the crown and crust from width; only the straight sides grow with copy.
   const quantise = value => Math.ceil(value / 4) * 4;
 
   function fit() {
     const docWidth = document.documentElement.clientWidth;
-    surfaces.forEach(({ card, surface }) => {
+    surfaces.forEach(({ card, surface, bread }) => {
       const height = surface.offsetHeight;
-      if (!height) return;
+      const width = surface.offsetWidth;
+      if (!height || !width) return;
 
       /* Resting tilt. Rotating about 50% 96% swings the card's top-right
          corner — and the character riding above it — to the right by about
@@ -183,23 +178,28 @@ export function initPbjJelly({
       const peak = Math.asin(Math.min(1, budget / lift)) * 180 / Math.PI;
       card.style.setProperty('--pbj-safe-tilt', `${Math.min(2.2, peak / 1.6).toFixed(3)}deg`);
 
-      /* The crumb starts 4.33% down the bread SVG and its heel ends 2.5% up
-         from the bottom, and both stretch with the card. Padding is solved
-         from the *content* height, not the current box height, so the value
-         does not depend on the padding we are about to write — the observer
-         re-runs once, computes the same numbers, and stops. */
-      const style = getComputedStyle(surface);
-      const content = height - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
-      const settled = (content + 38) / 0.9317;
-      card.style.setProperty('--pbj-card-padding-top', `${quantise(Math.max(72, settled * 0.0433 + 20))}px`);
-      card.style.setProperty('--pbj-card-padding-bottom', `${quantise(Math.max(44, settled * 0.025 + 18))}px`);
+      card.style.setProperty('--pbj-card-padding-top', `${quantise(Math.max(76, width * .21))}px`);
+      card.style.setProperty('--pbj-card-padding-bottom', `${quantise(Math.max(36, width * .1))}px`);
+      card.style.setProperty('--pbj-crown-y', `${(width * .065).toFixed(2)}px`);
+
+      const h = +(height / width * 300).toFixed(2);
+      bread.setAttribute('viewBox', `0 0 300 ${h}`);
+      const [crust, crumb] = bread.querySelectorAll('path');
+      crust.setAttribute('d', `M18 92 C-4 79 -1 46 17 30 C45 6 98 5 150 15 C202 5 255 6 283 30 C301 46 304 79 282 92 L275 ${h-36} Q274 ${h-10} 252 ${h-9} Q150 ${h-2} 48 ${h-9} Q26 ${h-10} 25 ${h-36}Z`);
+      crumb.setAttribute('d', `M28 87 C10 73 12 52 27 39 C52 17 99 16 150 26 C201 16 248 17 273 39 C288 52 290 73 272 87 L265 ${h-36} Q264 ${h-20} 250 ${h-19} Q150 ${h-12} 50 ${h-19} Q36 ${h-20} 35 ${h-36}Z`);
+      const flecks = bread.querySelectorAll('ellipse');
+      [[29, 115], [271, h*.48], [30, h*.7], [270, h-39], [68, h-15]].forEach(([x, y], i) => {
+        flecks[i]?.setAttribute('cx', x);
+        flecks[i]?.setAttribute('cy', y);
+      });
     });
   }
 
   cards.forEach(card => priorSafeTilts.set(card, {
     tilt: card.style.getPropertyValue('--pbj-safe-tilt'),
     top: card.style.getPropertyValue('--pbj-card-padding-top'),
-    bottom: card.style.getPropertyValue('--pbj-card-padding-bottom')
+    bottom: card.style.getPropertyValue('--pbj-card-padding-bottom'),
+    crown: card.style.getPropertyValue('--pbj-crown-y')
   }));
 
   rootEl?.classList.add('pbj-jelly-root');
@@ -242,6 +242,7 @@ export function initPbjJelly({
       restore('--pbj-safe-tilt', prior.tilt);
       restore('--pbj-card-padding-top', prior.top);
       restore('--pbj-card-padding-bottom', prior.bottom);
+      restore('--pbj-crown-y', prior.crown);
       if (!card.getAttribute('style')) card.removeAttribute('style');
     });
     rootEl?.classList.remove('pbj-jelly-root', 'pbj-jelly-ready', 'pbj-jelly-pending');

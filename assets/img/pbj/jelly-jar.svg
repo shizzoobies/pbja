@@ -15,7 +15,7 @@
       <path d="M66 101 L66 117 M67 82 L70 77" stroke="#fff9ff" stroke-width="6" fill="none"/>
       <path d="M84 105 Q120 98 156 105 Q167 108 167 119 L167 157 Q166 171 152 173 Q119 178 85 172 Q73 170 73 157 L73 120 Q73 108 84 105Z" fill="#fff6df" stroke-width="3.5"/>
       <g id="face">
-        <g id="eyes" fill="#482447" stroke="none"><ellipse cx="101" cy="132" rx="4.8" ry="7"/><ellipse cx="139" cy="132" rx="4.8" ry="7"/></g>
+        <g id="eyes" fill="#482447" stroke="none"><ellipse cx="101" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="139" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="101" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="139" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="101.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><ellipse cx="139.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><circle cx="99" cy="129" r="2.1" fill="#fff"/><circle cx="137" cy="129" r="2.1" fill="#fff"/></g>
         <g fill="#f29fb3" stroke="none"><ellipse cx="88" cy="143" rx="8" ry="4.5"/><ellipse cx="152" cy="143" rx="8" ry="4.5"/></g>
         <path d="M108 145 Q120 159 132 145" fill="none" stroke-width="3.5"/>
         <path d="M115 162 Q109 156 113 154 Q117 152 120 156 Q124 151 128 155 Q132 160 120 166Z" fill="#f1439d" stroke="none"/>

@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/pbj-buttons.css">
+  <link rel="stylesheet" href="/assets/css/pbj-footer.css">
+  <link rel="stylesheet" href="assets/css/pbj-details.css">
   <!-- Without JS nothing ever adds .is-scrolled, so the transparent hero header
        would keep its white nav over light page content. Force the solid state. -->
   <noscript>
@@ -173,7 +176,7 @@
 
 
     <!-- Our Story -->
-    <section class="section" style="background:#E8F5FA;" aria-labelledby="story-heading">
+    <section class="section pbj-story-art" style="background:#E8F5FA;" aria-labelledby="story-heading">
       <div class="container">
         <div class="section-header section-header--center">
           <hr class="section-rule section-rule--pink" aria-hidden="true" style="margin-inline:auto;">
@@ -184,19 +187,19 @@
 
         <div class="why-grid">
           <article class="why-card why-card--p">
-            <span class="why-letter" aria-hidden="true">P</span>
+            <img class="pbj-story-illustration" src="assets/img/pbj/peanut-butter.webp" alt="" width="960" height="480" loading="lazy" decoding="async">
             <h3>Precision</h3>
             <div class="why-rule" aria-hidden="true"></div>
             <p>Every number matters. We bring meticulous attention to detail to your books so you can trust every report, every statement, and every decision you make from them.</p>
           </article>
           <article class="why-card why-card--b">
-            <span class="why-letter" aria-hidden="true">B</span>
+            <img class="pbj-story-illustration" src="assets/img/pbj/strawberry-sandwich.webp" alt="" width="960" height="480" loading="lazy" decoding="async">
             <h3>Balance</h3>
             <div class="why-rule" aria-hidden="true"></div>
             <p>Your financials should be in balance, and so should your relationship with your accountant. We keep your books clean and communication clear, without unnecessary complexity.</p>
           </article>
           <article class="why-card why-card--j">
-            <span class="why-letter" aria-hidden="true">J</span>
+            <img class="pbj-story-illustration" src="assets/img/pbj/strawberry-jelly.webp" alt="" width="960" height="480" loading="lazy" decoding="async">
             <h3>Just-in-Time</h3>
             <div class="why-rule" aria-hidden="true"></div>
             <p>We deliver the right financial insights at the right time, so you're never scrambling at tax season or making decisions without the data you need to succeed.</p>
@@ -206,12 +209,12 @@
     </section>
 
     <!-- Our Story: full-width overlay band -->
-    <section class="overlay-band" aria-label="Brittany's story">
+    <section class="overlay-band pbj-story" aria-label="Brittany's story">
       <img src="assets/img/hero/story-band.jpg" class="overlay-band-img" alt="Brittany and Mark Ferguson, the husband-and-wife team behind PB&amp;J Strategic Accounting" loading="lazy" width="1400" height="1050">
       <div class="overlay-band-fade" aria-hidden="true"></div>
       <div class="overlay-band-content">
           <span class="eyebrow">Our Story</span>
-          <h2>A Family-Run Firm</h2>
+          <h2>A <span class="pbj-underline">Family-Run</span> Firm</h2>
           <p>After 13 years working in the accounting world, I decided to venture out and take the knowledge I had gained over the years to truly help people and companies understand their sticky situations.</p>
           <p>I love taking those messy sandwiches and turning them into an enjoyable feast everyone has come to love. The name PB&amp;J comes from my three wonderful children, and yes I am as OCD as the name implies.</p>
           <ul class="cred-list" aria-label="Brittany's credentials and experience">
@@ -221,22 +224,28 @@
             <li><span class="cred-dot" aria-hidden="true"></span>QuickBooks Online certified</li>
             <li><span class="cred-dot" aria-hidden="true"></span>Small business financial planning &amp; strategy</li>
           </ul>
-          <div class="btn-row">
+          <div class="btn-row pbj-perch-row">
             <a class="btn" href="/contact">Book a Free Consultation</a>
-            <a class="btn btn-ghost" href="/services">View Services</a>
+            <a class="btn btn-ghost pbj-button-home" href="/services">View Services<span class="pbj-cameo pbj-button-rest" aria-hidden="true"><img src="assets/img/pbj/jelly-corner-seated.svg" alt="" width="240" height="250"></span></a>
           </div>
       </div>
     </section>
 
     <!-- CTA Strip -->
-    <section class="cta-strip" aria-labelledby="about-cta-heading">
+    <section class="cta-strip pbj-signoff" aria-labelledby="about-cta-heading">
       <div class="container">
-        <span class="eyebrow" style="color:#0E7490;">Ready to Get Started?</span>
+        <div class="pbj-signoff-panel">
+
+          <div class="pbj-signoff-copy">
+        <span class="eyebrow"><span class="pbj-dollop" aria-hidden="true"></span>Ready to Get Started?</span>
         <h2 id="about-cta-heading">Hope Is a Click Away</h2>
         <p>If you are feeling like you cannot get a grip and do not know where to start, just know hope is a click away.</p>
-        <div class="btn-row" style="justify-content:center;">
+        <div class="btn-row">
           <a class="btn" href="/contact">Get in Touch</a>
           <a class="btn-secondary" href="/pricing">See Pricing Plans</a>
+        </div>
+          </div>
+          <p class="pbj-note">A little help<br>goes a long way.</p>
         </div>
       </div>
     </section>
@@ -291,6 +300,9 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="/assets/js/pbj-buttons.js" defer></script>
+  <script src="/assets/js/pbj-eyes.js" defer></script>
+  <script src="assets/js/pbj-details.js" defer></script>
   <script src="assets/js/chat.js" defer></script>
 </body>
 </html>

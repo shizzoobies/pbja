@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/pbj-buttons.css">
+  <link rel="stylesheet" href="/assets/css/pbj-footer.css">
+  <link rel="stylesheet" href="assets/css/pbj-details.css">
   <!-- Pricing-page-only bread cards and jelly mascot. Every rule is gated behind
        classes that assets/js/pbj-jelly.js adds, so this is inert without JS. -->
   <link rel="stylesheet" href="assets/css/pbj-jelly.css">
@@ -257,7 +260,7 @@
           <article class="price-card" aria-labelledby="plan-crustless">
             <h3 id="plan-crustless">The Crustless</h3>
             <p class="price-tagline">You handle the Crust, we seal the edges.</p>
-            <div class="price-amount"><span aria-hidden="true">Starting at $400<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $400 per month</span></div>
+            <div class="price-amount"><span aria-hidden="true"><span class="price-prefix">Starting at</span> $400<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $400 per month</span></div>
             <ul aria-label="Plan features">
               <li>Account Manager Review</li>
               <li>Basic Monthly Reports</li>
@@ -271,7 +274,7 @@
           <article class="price-card" aria-labelledby="plan-crust">
             <h3 id="plan-crust">Just the Crust</h3>
             <p class="price-tagline">Just the essentials to keep you out of trouble.</p>
-            <div class="price-amount"><span aria-hidden="true">Starting at $500<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $500 per month</span></div>
+            <div class="price-amount"><span aria-hidden="true"><span class="price-prefix">Starting at</span> $500<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $500 per month</span></div>
             <ul aria-label="Plan features">
               <li style="flex-wrap:wrap;row-gap:.45rem;">Basic Bookkeeping
                 <ul style="flex:0 0 100%;margin:0;">
@@ -290,7 +293,7 @@
             <span class="price-badge">Most Popular</span>
             <h3 id="plan-classic">The Classic</h3>
             <p class="price-tagline">Everything you need to stay on top of your financials.</p>
-            <div class="price-amount"><span aria-hidden="true">Starting at $1,000<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $1,000 per month</span></div>
+            <div class="price-amount"><span aria-hidden="true"><span class="price-prefix">Starting at</span> $1,000<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $1,000 per month</span></div>
             <p class="feature-group-label">Just the Crust Plus:</p>
             <ul aria-label="Plan features">
               <li class="feature-label">Monthly Call with Account Manager</li>
@@ -305,7 +308,7 @@
           <article class="price-card" aria-labelledby="plan-royale">
             <h3 id="plan-royale">The Jelly Royale</h3>
             <p class="price-tagline">A little extra sweetness, without the stickiness.</p>
-            <div class="price-amount"><span aria-hidden="true">Starting at $1,500<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $1,500 per month</span></div>
+            <div class="price-amount"><span aria-hidden="true"><span class="price-prefix">Starting at</span> $1,500<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $1,500 per month</span></div>
             <ul aria-label="Plan features">
               <li class="feature-label" style="flex-wrap:wrap;row-gap:.45rem;">Basic Bookkeeping plus:
                 <ul style="flex:0 0 100%;margin:0;">
@@ -337,7 +340,7 @@
           <article class="price-card" aria-labelledby="plan-ultimate">
             <h3 id="plan-ultimate">The Ultimate Spread</h3>
             <p class="price-tagline">Perfectly blended, from daily support to strategic insight.</p>
-            <div class="price-amount"><span aria-hidden="true">Starting at $2,000<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $2,000 per month</span></div>
+            <div class="price-amount"><span aria-hidden="true"><span class="price-prefix">Starting at</span> $2,000<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/mo</span></span><span class="visually-hidden">Starting at $2,000 per month</span></div>
             <p class="feature-group-label">The Jelly Royale plus:</p>
             <ul aria-label="Plan features">
               <li class="feature-label">Daily transaction categorized</li>
@@ -369,7 +372,7 @@
           <article class="price-card" aria-labelledby="plan-nutty">
             <h3 id="plan-nutty">The Nutty Buddy</h3>
             <p class="price-tagline">For businesses with a few "sticky" situations.</p>
-            <div class="price-amount"><span aria-hidden="true">Starting at $125<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/hr</span></span><span class="visually-hidden">Starting at $125 per hour</span></div>
+            <div class="price-amount"><span aria-hidden="true"><span class="price-prefix">Starting at</span> $125<span style="font-size:1rem; font-weight:600; color:var(--text-muted);">/hr</span></span><span class="visually-hidden">Starting at $125 per hour</span></div>
             <ul aria-label="Plan features">
               <li>Custom or irregular bookkeeping support</li>
               <li>Flexible hours, pay only for what you need</li>
@@ -381,7 +384,7 @@
           <article class="price-card" aria-labelledby="plan-rescue">
             <h3 id="plan-rescue">The Rescue Spread</h3>
             <p class="price-tagline">We swoop in and get your books back on track.</p>
-            <div class="price-amount"><span aria-hidden="true">Starting at $800</span><span class="visually-hidden">Starting at $800</span></div>
+            <div class="price-amount"><span aria-hidden="true"><span class="price-prefix">Starting at</span> $800</span><span class="visually-hidden">Starting at $800</span></div>
             <ul aria-label="Plan features">
               <li>Catch-up bookkeeping for businesses behind on records</li>
               <li>QuickBooks cleanup and error correction</li>
@@ -398,53 +401,111 @@
 
 
     <!-- Why Choose PBJ section -->
-    <section class="section section--tinted why-choose-section" aria-labelledby="pricing-copy-heading">
+    <section class="section pbj-values" aria-labelledby="pricing-copy-heading">
       <div class="container">
 
-        <div class="why-choose-header">
-          <span class="eyebrow">What Sets Us Apart</span>
-          <h2 id="pricing-copy-heading" class="why-choose-title">Why Choose PB&amp;J?</h2>
-          <p class="why-choose-lead">Two things you'll never find here: cookie-cutter packages or surprise invoices.</p>
+        <div class="pbj-values-heading">
+          <div>
+            <span class="eyebrow">What Sets Us Apart</span>
+            <h2 id="pricing-copy-heading">Why Choose <span class="pbj-underline">PB&amp;J?</span></h2>
+          </div>
+          <p class="lead">Two things you'll never find here: cookie-cutter packages or surprise invoices.</p>
         </div>
 
-        <div class="why-choose-grid">
-
-          <div class="why-choose-card">
-            <div class="why-choose-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
-            </div>
-            <h3>Built Around Your Business</h3>
+        <article class="pbj-value" aria-labelledby="value-fit-heading">
+          <div class="pbj-value-heading">
+            <svg class="pbj-value-art" viewBox="0 0 144 116" width="144" height="116" aria-hidden="true" focusable="false">
+              <path d="M12 56C5 25 45 6 85 14s63 44 39 71-101 8-112-29Z" fill="#fceef5"/>
+              <g stroke="#482447" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <g transform="rotate(-7 59 58)">
+                  <rect x="29" y="19" width="63" height="82" rx="7" fill="#fff"/>
+                  <path d="M42 37h34M42 46h24" fill="none"/>
+                  <path d="M43 84V69h9v15m7 0V59h9v25m7 0V53h9v31" fill="#9fe2f0"/>
+                </g>
+                <path d="m95 35 11-14 11 8-11 15-26 35-13 7 3-15Z" fill="#f6b5d5"/>
+                <path d="m70 71 10 8m17-47 11 8M67 86l6-3" fill="none"/>
+                <path d="m119 62 2 8 8 2-8 2-2 8-2-8-8-2 8-2Z" fill="#ff43a4" stroke="none"/>
+              </g>
+            </svg>
+            <h3 id="value-fit-heading">Built Around<br>Your Business</h3>
+          </div>
+          <div class="pbj-value-copy">
             <p>At PB&amp;J Strategic Accounting, we understand that no two businesses are exactly alike. A growing construction company doesn't have the same financial challenges as a startup or a local family-owned shop. That's why we design customized accounting packages to fit your specific needs, budget, and goals.</p>
             <p>Maybe you only need basic monthly bookkeeping to keep your QuickBooks organized. Or perhaps your business is scaling quickly and requires fractional CFO support for cash flow forecasting, budgeting, and financial strategy. We can adjust your package to include exactly what you need, and nothing you don't.</p>
             <p>Our flexible approach means you'll never feel boxed into a "one-size-fits-all" service. Instead, you'll get a tailored solution that grows alongside your business, providing the right level of support at the right time.</p>
           </div>
+        </article>
 
-          <div class="why-choose-card">
-            <div class="why-choose-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
-            </div>
-            <h3>Straightforward Pricing, No Surprises</h3>
+        <article class="pbj-value pbj-value--clear" aria-labelledby="value-pricing-heading">
+          <div class="pbj-value-heading">
+            <svg class="pbj-value-art" viewBox="0 0 144 116" width="144" height="116" aria-hidden="true" focusable="false">
+              <path d="M14 38C29 8 91 10 117 29s27 62-17 73S-1 68 14 38Z" fill="#fceef5"/>
+              <g stroke="#482447" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m37 18 8 5 8-5 8 5 8-5 8 5 8-5 8 5v77l-8-5-8 5-8-5-8 5-8-5-8 5-8-5Z" fill="#fff6df" transform="rotate(-6 65 59)"/>
+                <path d="m48 37 27-3m-26 15 22-2m-21 15 18-2" fill="none"/>
+                <circle cx="96" cy="77" r="22" fill="#9fe2f0"/>
+                <path d="m85 77 8 8 14-16" fill="none" stroke="#17708b" stroke-width="4"/>
+                <path d="m109 19 2 8 8 2-8 2-2 8-2-8-8-2 8-2Z" fill="#ff43a4" stroke="none"/>
+              </g>
+            </svg>
+            <h3 id="value-pricing-heading">Straightforward Pricing,<br><span class="pbj-underline">No Surprises</span></h3>
+          </div>
+          <div class="pbj-value-copy">
             <p>Running a business is challenging enough without the added stress of keeping your books in order or worrying if your financials are accurate. At PB&amp;J Strategic Accounting, we believe bookkeeping shouldn't feel overwhelming, it should give you confidence and clarity. That's why we offer transparent pricing and tailored solutions for businesses who need dependable support.</p>
             <p>Whether you're struggling with QuickBooks cleanup, want reliable monthly bookkeeping, or need the strategic guidance of a fractional CFO, our team is here to help. We don't just crunch numbers, we partner with you to understand your goals, identify opportunities, and give you the financial insight you need to make smart business decisions.</p>
             <p>Our pricing is straightforward, with no hidden fees or surprise charges. You'll know exactly what services you're receiving and what value you're getting. From startups to established businesses, we work with clients at every stage to provide bookkeeping and CFO services that scale as you grow.</p>
-            <p class="why-choose-card-promise">
+            <p class="pbj-value-promise">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
               Transparent billing, always.
             </p>
           </div>
-
-        </div>
+        </article>
       </div>
     </section>
 
     <!-- CTA Strip -->
-    <section class="cta-strip" aria-labelledby="pricing-cta-heading">
+    <section class="cta-strip pbj-signoff" aria-labelledby="pricing-cta-heading">
       <div class="container">
-        <span class="eyebrow" style="color:#0E7490;">Ready to Get Started?</span>
+        <div class="pbj-signoff-panel">
+          <span class="pbj-cameo" aria-hidden="true" data-pbj-motion="wave" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 250" aria-hidden="true" focusable="false" width="240" height="250"><g stroke="#482447" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <g id="pricing-signoff-legs" fill="none">
+      <g id="pricing-signoff-leg-left"><path d="M91 188 Q83 207 88 219"/><path d="M89 214 C81 208 67 214 67 222 C67 230 91 233 96 225 Q100 220 89 214Z" fill="#fff5dc"/></g>
+      <g id="pricing-signoff-leg-right"><path d="M149 188 Q159 205 151 219"/><path d="M151 215 C162 209 176 216 175 224 C172 232 149 231 145 225 Q143 220 151 215Z" fill="#fff5dc"/></g>
+    </g>
+    <g id="pricing-signoff-arm-left"><path d="M63 120 Q36 121 35 145" fill="none"/><path d="M36 140 C25 132 22 141 25 147 C13 149 17 163 28 164 C41 170 49 153 43 146 L40 145" fill="#fff5dc"/></g>
+    <g id="pricing-signoff-arm-right" data-pbj-arm><path d="M177 119 Q203 124 207 96" fill="none"/><path d="M205 101 C193 99 188 87 195 85 L200 88 C188 72 197 69 205 82 C200 65 211 67 213 82 C217 70 226 76 220 91 Q219 101 205 101Z" fill="#fff5dc"/></g>
+    <g id="pricing-signoff-jar-body">
+      <path d="M76 54 L164 54 L164 65 Q183 72 184 96 L184 169 Q184 195 158 196 L82 196 Q56 195 56 169 L56 96 Q57 73 76 65Z" fill="#eed9f1"/>
+      <path d="M65 92 Q80 81 98 91 T131 92 T174 90 L175 168 Q175 185 158 186 L82 186 Q65 185 65 168Z" fill="#a863b6" stroke="none"/>
+      <path d="M67 169 Q102 182 174 162 L174 170 Q174 185 157 185 L82 185 Q68 184 67 169" fill="#8a429c" stroke="none"/>
+      <path d="M66 101 L66 117 M67 82 L70 77" stroke="#fff9ff" stroke-width="6" fill="none"/>
+      <path d="M84 105 Q120 98 156 105 Q167 108 167 119 L167 157 Q166 171 152 173 Q119 178 85 172 Q73 170 73 157 L73 120 Q73 108 84 105Z" fill="#fff6df" stroke-width="3.5"/>
+      <g id="pricing-signoff-face">
+        <g id="pricing-signoff-eyes" fill="#482447" stroke="none"><ellipse cx="101" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="139" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="101" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="139" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="101.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><ellipse cx="139.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><circle cx="99" cy="129" r="2.1" fill="#fff"/><circle cx="137" cy="129" r="2.1" fill="#fff"/></g>
+        <g fill="#f29fb3" stroke="none"><ellipse cx="88" cy="143" rx="8" ry="4.5"/><ellipse cx="152" cy="143" rx="8" ry="4.5"/></g>
+        <path d="M108 145 Q120 159 132 145" fill="none" stroke-width="3.5"/>
+        <path d="M115 162 Q109 156 113 154 Q117 152 120 156 Q124 151 128 155 Q132 160 120 166Z" fill="#f1439d" stroke="none"/>
+      </g>
+      <path d="M80 62 H160" fill="none" stroke="#c58ecd" stroke-width="3"/>
+    </g>
+    <g id="pricing-signoff-lid">
+      <rect x="62" y="35" width="116" height="27" rx="9" fill="#f1439d"/>
+      <path d="M73 40 Q120 34 166 40" stroke="#ffb4d8" stroke-width="3" fill="none"/>
+      <path d="M77 49 V56 M92 48 V56 M107 48 V56 M122 48 V56 M137 48 V56 M152 48 V56 M165 49 V56" stroke="#a62c73" stroke-width="3"/>
+      <path d="M72 33 Q75 26 85 29" stroke="#482447" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+</svg></span>
+
+          <div class="pbj-signoff-copy">
+        <span class="eyebrow"><span class="pbj-dollop" aria-hidden="true"></span>Ready to Get Started?</span>
         <h2 id="pricing-cta-heading">Not Sure Which Plan Is Right for You?</h2>
         <p>Book a free consultation and we'll walk you through the best option for your business size and goals.</p>
-        <div class="btn-row" style="justify-content:center;">
+        <div class="btn-row">
           <a class="btn" href="/contact">Book a Free Call</a>
+        </div>
+          </div>
+          <p class="pbj-note">Room to grow.<br>Help along the way.</p>
         </div>
       </div>
     </section>
@@ -497,6 +558,9 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="/assets/js/pbj-buttons.js" defer></script>
+  <script src="/assets/js/pbj-eyes.js" defer></script>
+  <script src="assets/js/pbj-details.js" defer></script>
   <script src="assets/js/chat.js" defer></script>
 
   <!-- ── PB&J bread cards + jelly mascot ──────────────────────────────────
@@ -522,7 +586,7 @@
           <path d="M66 101 L66 117 M67 82 L70 77" stroke="#fff9ff" stroke-width="6" fill="none"/>
           <path d="M84 105 Q120 98 156 105 Q167 108 167 119 L167 157 Q166 171 152 173 Q119 178 85 172 Q73 170 73 157 L73 120 Q73 108 84 105Z" fill="#fff6df" stroke-width="3.5"/>
           <g id="face">
-            <g id="eyes" fill="#482447" stroke="none"><ellipse cx="101" cy="132" rx="4.8" ry="7"/><ellipse cx="139" cy="132" rx="4.8" ry="7"/></g>
+            <g id="eyes" fill="#482447" stroke="none"><ellipse cx="101" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="139" cy="132" rx="7" ry="8.5" fill="#17708b"/><ellipse cx="101" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="139" cy="131.5" rx="5.4" ry="6.8" fill="#48c2e0"/><ellipse cx="101.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><ellipse cx="139.5" cy="133" rx="2.7" ry="4" fill="#18394f"/><circle cx="99" cy="129" r="2.1" fill="#fff"/><circle cx="137" cy="129" r="2.1" fill="#fff"/></g>
             <g fill="#f29fb3" stroke="none"><ellipse cx="88" cy="143" rx="8" ry="4.5"/><ellipse cx="152" cy="143" rx="8" ry="4.5"/></g>
             <path d="M108 145 Q120 159 132 145" fill="none" stroke-width="3.5"/>
             <path d="M115 162 Q109 156 113 154 Q117 152 120 156 Q124 151 128 155 Q132 160 120 166Z" fill="#f1439d" stroke="none"/>

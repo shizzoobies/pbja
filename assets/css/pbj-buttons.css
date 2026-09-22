@@ -1,0 +1,35 @@
+/* A single decorative jar follows buttons without changing their hit areas. */
+.pbj-button-home { position: relative; }
+.pbj-button-home, .pbj-button-occupied { rotate: 2deg; transform-origin: 80% 50%; }
+.pbj-button-active .pbj-button-home:not(.pbj-button-occupied) { rotate: 0deg; }
+.pbj-button-home .pbj-button-rest {
+  position: absolute;
+  width: 68px;
+  top: -55px;
+  right: -28px;
+  left: auto;
+  bottom: auto;
+  pointer-events: none;
+}
+.pbj-perch-row { padding-top: 2rem; row-gap: 4rem; }
+.pbj-button-mascot {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 64px;
+  aspect-ratio: 240 / 250;
+  z-index: 10010;
+  pointer-events: none;
+  user-select: none;
+  transform-origin: 50% 82%;
+  contain: layout style;
+}
+.pbj-button-mascot[hidden] { display: none; }
+.pbj-button-mascot img, .pbj-button-mascot svg { display: block; width: 100%; height: auto; pointer-events: none; }
+[data-pbj-pupils] { transition: transform 140ms ease-out; }
+[data-pbj-moving] [data-pbj-pupils],
+.pbj-jelly-arriving [data-pbj-pupils],
+.pbj-jelly-leaving [data-pbj-pupils] { transform: translate(0, 0) !important; }
+.pbj-button-active .pbj-cameo { visibility: hidden; }
+@media (max-width: 768px) {
+  .pbj-button-home .pbj-button-rest { width: 56px; top: -45px; right: -22px; }
+}
